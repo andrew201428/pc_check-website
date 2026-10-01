@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect Version 1 Tool - Created by Renz Devs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="watermark-top-left">Created by Renz</div>
+
+    <header class="top-nav">
+        <div class="nav-logo">
+            <!-- Custom SVG Cyber Logo -->
+            <svg class="site-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 3L4 9V17C4 24.5 10 31.2 18 33C26 31.2 32 24.5 32 17V9L18 3Z" fill="rgba(0, 229, 255, 0.1)" stroke="#00e5ff" stroke-width="2.5" stroke-linejoin="round"/>
+                <path d="M13 17L17 21L23 15" stroke="#00c853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="21" cy="14" r="5" stroke="#00e5ff" stroke-width="2"/>
+                <path d="M24.5 17.5L28 21" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Detect Version 1 Tool</span>
+        </div>
+        
+        <div class="top-nav-links">
+            <a href="#" onclick="openFooterModal('freeTools')">Free Tools</a>
+            <a href="https://discord.gg/agRsP2UAPA" target="_blank">Discord</a>
+            <a href="#" onclick="openFooterModal('changelogs')">Changelogs</a>
+            <a href="#" onclick="openFooterModal('privacy')">Privacy Policy</a>
+            <a href="#" onclick="openFooterModal('tos')">TOS</a>
+        </div>
+
+        <div class="nav-auth-buttons">
+            <button class="nav-btn" onclick="openAuthModal('login')">Sign In</button>
+            <button class="nav-btn register" onclick="openAuthModal('register')">Register</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="dashboard-hero">
+            <h1>Forensic Tools, Reimagined</h1>
+            <p>A curated suite of next-gen utilities built for PC checkers and digital forensics. Free, fast and constantly improved.</p>
+            <span class="creator-tag">Created by Renz Devs</span>
+        </div>
+
+        <!-- ALL-IN-ONE DOWNLOADER FEATURED CARD -->
+        <div class="all-in-one-banner">
+            <div class="aio-header">
+                <span class="featured-badge">Featured Bundle</span>
+            </div>
+            <h2>ToolsDownloader All-in-One</h2>
+            <p>The all-in-one downloader for your free tools suite. Get every tool in a single, streamlined installer with built-in file explorer, auto extraction, and more.</p>
+            
+            <div class="aio-link-box">
+                <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/ToolsDownloaderAllInOne</span>
+                <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/ToolsDownloaderAllInOne')">📋</button>
+            </div>
+
+            <button class="download-all-btn" onclick="startDownload('ToolsDownloader_AllInOne.exe')">
+                Download All-in-One Bundle
+            </button>
+        </div>
+
+        <h2 style="color: #fff; margin-bottom: 20px; font-size: 22px;">Individual System Tools</h2>
+
+        <div class="tools-grid">
+            <!-- 1. RECENT CHEAT PREFETCH TRACER +++ -->
+            <div class="tool-card featured-card">
+                <div>
+                    <h3>Recent Cheat Prefetch Tracer +++</h3>
+                    <p>Targeted forensic module built specifically to extract and isolate recently executed .exe cheat binaries from Windows recent and prefetch history.</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Filters out normal applications and highlights strictly recent cheat executable execution logs.
+                    </div>
+                    
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search recent cheat .exe files..." onkeyup="filterToolData(this, 'recentCheatResults')">
+                    </div>
+                    <div id="recentCheatResults" class="tool-search-list">
+                        <span class="search-item">Recent_Executable_Cheat_Loader.exe</span>
+                        <span class="search-item">Prefetch_Target_Exploit_Client.exe</span>
+                        <span class="search-item">Last_Run_Injected_Tool_v2.exe</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/RecentCheatPrefetchTracerPlus</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/RecentCheatPrefetchTracerPlus')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('RecentCheatPrefetchTracerPlus.exe')">Download .exe</button>
+            </div>
+
+            <!-- 2. APPCRASH & HISTORY TRACER -->
+            <div class="tool-card">
+                <div>
+                    <h3>AppCrash & History Tracer</h3>
+                    <p>Advanced diagnostic utility built to inspect system crash logs, application history, and download trails to catch residual traces instantly.</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Scans Windows Error Reporting (WER) logs, browser download histories, and execution timelines.
+                    </div>
+                    
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search crash logs or download history..." onkeyup="filterToolData(this, 'appCrashResults')">
+                    </div>
+                    <div id="appCrashResults" class="tool-search-list">
+                        <span class="search-item">WER_AppCrash_RobloxPlayer.exe.12889.dmp</span>
+                        <span class="search-item">Download_History_Chrome_Cache.txt</span>
+                        <span class="search-item">Exception_Fault_Module_ntdll.dll</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/AppCrashHistoryTracer</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/AppCrashHistoryTracer')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('AppCrashHistoryTracer.exe')">Download .exe</button>
+            </div>
+
+            <!-- 3. DELETE CHEAT HISTORY +++ -->
+            <div class="tool-card">
+                <div>
+                    <h3>Delete Cheat History +++</h3>
+                    <p>Specialized forensic scanner designed to unearth and expose deleted cheat executables, injectors, and exploit payloads (including JJSploit traces).</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Parses unallocated disk sectors and residual directory records to find wiped cheat binaries.
+                    </div>
+
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search deleted cheats / JJSploit..." onkeyup="filterToolData(this, 'deleteCheatResults')">
+                    </div>
+                    <div id="deleteCheatResults" class="tool-search-list">
+                        <span class="search-item">Deleted_JJSploit_Loader_v6.exe</span>
+                        <span class="search-item">Wiped_Exploit_Payload_Dll.dll</span>
+                        <span class="search-item">Removed_Injector_Runtime.bin</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/DeleteCheatHistoryPlus</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/DeleteCheatHistoryPlus')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('DeleteCheatHistoryPlus.exe')">Download .exe</button>
+            </div>
+
+            <!-- 4. APPDATA & PROCESS / SYSTEM INFORMER ANALYZER -->
+            <div class="tool-card">
+                <div>
+                    <h3>AppData & Process Analyzer</h3>
+                    <p>Deep-dives into %appdata% hidden directories and acts as a built-in System Informer to inspect active handles, hidden tasks, and DLL injections.</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Scans Roaming/Local/LocalLow paths and queries kernel process structures for anomalies.
+                    </div>
+
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search AppData & processes..." onkeyup="filterToolData(this, 'appdataProcessResults')">
+                    </div>
+                    <div id="appdataProcessResults" class="tool-search-list">
+                        <span class="search-item">AppData_Local_Hidden_Config.json</span>
+                        <span class="search-item">Process_Injected_Dll_Handle.dll</span>
+                        <span class="search-item">System_Informer_Kernel_Task.exe</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/AppDataProcessAnalyzer</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/AppDataProcessAnalyzer')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('AppDataProcessAnalyzer.exe')">Download .exe</button>
+            </div>
+
+            <!-- 5. DEEP TRACE FORENSICS & AUDIT -->
+            <div class="tool-card">
+                <div>
+                    <h3>Deep Trace Forensics & Audit</h3>
+                    <p>Advanced undelete and deep artifact scanner designed to unearth deleted files, malware traces, and original source URLs.</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Scans NTFS Master File Table (MFT) and browser cache databases.
+                    </div>
+
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search deleted artifacts..." onkeyup="filterToolData(this, 'deepTraceResults')">
+                    </div>
+                    <div id="deepTraceResults" class="tool-search-list">
+                        <span class="search-item">MFT_Record_Wiped_Injector.dll</span>
+                        <span class="search-item">Browser_Cache_Source_Link.log</span>
+                        <span class="search-item">Master_File_Table_Deleted_Log</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/DeepTraceAudit</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/DeepTraceAudit')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('DeepTraceAudit.exe')">Download .exe</button>
+            </div>
+
+            <!-- 6. NTFS JOURNAL EXPLORER -->
+            <div class="tool-card">
+                <div>
+                    <h3>NTFS Journal Explorer</h3>
+                    <p>Advanced system log parser featuring integrated USN Journal bypass detection and deep keyword filtering.</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Parses the NTFS USN Change Journal to extract low-level file system logs.
+                    </div>
+
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search USN journal logs..." onkeyup="filterToolData(this, 'ntfsResults')">
+                    </div>
+                    <div id="ntfsResults" class="tool-search-list">
+                        <span class="search-item">USN_Record_File_Create</span>
+                        <span class="search-item">USN_Record_Data_Overwrite</span>
+                        <span class="search-item">USN_Journal_Bypass_Attempt</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/NTFSJournalExplorer</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/NTFSJournalExplorer')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('NTFSJournalExplorer.exe')">Download .exe</button>
+            </div>
+
+            <!-- 7. SHELLBAGS TIMELINE ANALYZER -->
+            <div class="tool-card">
+                <div>
+                    <h3>ShellBags Timeline Analyzer</h3>
+                    <p>Examines Windows Registry ShellBags artifacts to track historical folder access and USB history.</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Decodes UsrClass.dat and NTUSER.DAT registry hives.
+                    </div>
+
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search ShellBags folders..." onkeyup="filterToolData(this, 'shellBagsResults')">
+                    </div>
+                    <div id="shellBagsResults" class="tool-search-list">
+                        <span class="search-item">UsrClass_Dat_Registry_Hive</span>
+                        <span class="search-item">USB_Mounted_Drive_History</span>
+                        <span class="search-item">Deleted_Directory_Path_Log</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/ShellBagsAnalyzer</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/ShellBagsAnalyzer')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('ShellBagsAnalyzer.exe')">Download .exe</button>
+            </div>
+
+            <!-- 8. PREFETCH & TIMELINE FORENSICS -->
+            <div class="tool-card">
+                <div>
+                    <h3>Prefetch & Timeline Forensics</h3>
+                    <p>Extracts and audits Windows Prefetch (.pf) files to reveal execution counts and run timestamps.</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Reads headers and metrics from C:\Windows\Prefetch.
+                    </div>
+
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search prefetch metrics..." onkeyup="filterToolData(this, 'prefetchResults')">
+                    </div>
+                    <div id="prefetchResults" class="tool-search-list">
+                        <span class="search-item">Prefetch_Header_Run_Count</span>
+                        <span class="search-item">First_Last_Execution_Timestamp</span>
+                        <span class="search-item">Windows_Prefetch_Directory_Scan</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/PrefetchForensics</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/PrefetchForensics')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('PrefetchForensics.exe')">Download .exe</button>
+            </div>
+
+            <!-- 9. USB & REGISTRY PERSISTENCE HUNTER -->
+            <div class="tool-card featured-card">
+                <div>
+                    <h3>USB & Registry Persistence Hunter</h3>
+                    <p>Specialized forensic module built to track external USB device connection artifacts and detect hidden registry autorun persistence keys.</p>
+                    <div class="mechanism-box">
+                        <strong>How it works:</strong> Scans Windows Registry Run/RunOnce keys and setupapi device logs.
+                    </div>
+
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search persistence keys & USB logs..." onkeyup="filterToolData(this, 'persistenceResults')">
+                    </div>
+                    <div id="persistenceResults" class="tool-search-list">
+                        <span class="search-item">Registry_RunKey_Autorun_Payload</span>
+                        <span class="search-item">USB_Stor_Device_Serial_History</span>
+                        <span class="search-item">Hidden_Startup_Service_Hook</span>
+                    </div>
+
+                    <div class="aio-link-box">
+                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/USBRegistryPersistenceHunter</span>
+                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/USBRegistryPersistenceHunter')">📋</button>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('USBRegistryPersistenceHunter.exe')">Download .exe</button>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <p class="footer-copyright">© 2026 Detect Version 1 Tool. Created by Renz Devs.</p>
+        </footer>
+    </main>
+
+    <!-- AUTHENTICATION MODAL -->
+    <div id="authModal" class="modal-overlay">
+        <div class="modal-content auth-box">
+            <span class="close-modal" onclick="closeAuthModal()">&times;</span>
+            
+            <div id="loginFormContainer">
+                <h2 style="color: #00e5ff; margin-bottom: 20px;">Sign In</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <label>Username</label>
+                        <input type="text" required placeholder="Enter your username">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="loginPassword" required placeholder="Enter password">
+                            <span class="toggle-password" onclick="togglePassword('loginPassword', this)">Show</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="action-btn">Login</button>
+                </form>
+            </div>
+
+            <div id="registerFormContainer" style="display: none;">
+                <h2 style="color: #00e5ff; margin-bottom: 20px;">Create Account</h2>
+                <form onsubmit="handleRegister(event)">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="input-group">
+                        <label>Username</label>
+                        <input type="text" required placeholder="Choose a username">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="registerPassword" required placeholder="Create password">
+                            <span class="toggle-password" onclick="togglePassword('registerPassword', this)">Show</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="confirmPassword" required placeholder="Confirm password">
+                            <span class="toggle-password" onclick="togglePassword('confirmPassword', this)">Show</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="action-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER INFO MODAL -->
+    <div id="footerModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeFooterModal()">&times;</span>
+            <h3 id="footerModalTitle" style="color: #00e5ff; margin-bottom: 15px; font-size: 20px;">Information</h3>
+            <div id="footerModalBody" style="color: #9999b0; font-size: 13px; line-height: 1.6; max-height: 300px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <!-- DOWNLOAD PROGRESS MODAL -->
+    <div id="downloadModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modalTitle" style="color: #00e5ff; margin-bottom: 10px; font-size: 18px;">Tool Execution Scanner</h3>
+            <p id="modalStatus" style="color: #9999b0; font-size: 13px; margin-bottom: 10px;">Initializing system check...</p>
+            
+            <div id="toolAuditOutput" style="background: #0d0d12; border: 1px solid #2a2a3c; border-radius: 6px; padding: 10px; font-family: monospace; font-size: 11px; color: #00c853; margin-bottom: 15px; max-height: 120px; overflow-y: auto; display: none;">
+                [SCAN INITIALIZED]<br>
+                Status: Running advanced forensic verification...
+            </div>
+
+            <div class="progress-bar-bg">
+                <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+            <p id="progressText" style="text-align: right; font-size: 12px; color: #00c853; margin-top: 8px; font-weight: bold;">0%</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
