@@ -96,7 +96,7 @@ function filterToolData(inputElement, listId) {
     }
 }
 
-/* Direct Default Download Function (No fake animation) */
+/* Direct Default Download Function */
 function startDownload(toolName) {
     const downloadLink = document.createElement('a');
     downloadLink.href = toolName;
