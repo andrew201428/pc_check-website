@@ -96,49 +96,12 @@ function filterToolData(inputElement, listId) {
     }
 }
 
+/* Direct Default Download Function (No fake animation) */
 function startDownload(toolName) {
-    const modal = document.getElementById('downloadModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalStatus = document.getElementById('modalStatus');
-    const progressBar = document.getElementById('progressBar');
-    const progressText = document.getElementById('progressText');
-    const auditOutput = document.getElementById('toolAuditOutput');
-
-    modalTitle.textContent = `Running Tool: ${toolName}`;
-    modalStatus.textContent = "Scanning system logs & forensic artifacts...";
-    progressBar.style.width = '0%';
-    progressText.textContent = '0%';
-    auditOutput.style.display = 'block';
-    auditOutput.innerHTML = `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}] Target: ${toolName}<br>Status: Parsing target files & memory handles...`;
-    modal.style.display = 'flex';
-
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += Math.floor(Math.random() * 12) + 4;
-        if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            progressBar.style.width = '100%';
-            progressText.textContent = '100% - Complete!';
-            modalStatus.textContent = "Scan finished successfully!";
-            
-            const currentDate = new Date().toLocaleString();
-            auditOutput.innerHTML += `<br>[${currentDate}] RESULT: System artifacts successfully extracted.<br>- Status: Audit logs verified clean.`;
-            
-            setTimeout(() => {
-                modal.style.display = 'none';
-                alert(`Scan complete for ${toolName}. Audit reports ready.`);
-            }, 1500);
-        } else {
-            progressBar.style.width = progress + '%';
-            progressText.textContent = progress + '%';
-            if (progress > 25 && progress < 60) {
-                modalStatus.textContent = "Analyzing directory structures and execution caches...";
-                auditOutput.innerHTML = `[${new Date().toLocaleTimeString()}] Parsing execution logs & prefetch targets...`;
-            } else if (progress >= 60) {
-                modalStatus.textContent = "Compiling results into GUI search view...";
-                auditOutput.innerHTML = `[${new Date().toLocaleTimeString()}] Indexing items for instant search...`;
-            }
-        }
-    }, 140);
+    const downloadLink = document.createElement('a');
+    downloadLink.href = toolName;
+    downloadLink.download = toolName;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
 }
