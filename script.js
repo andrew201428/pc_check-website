@@ -96,26 +96,26 @@ function filterToolData(inputElement, listId) {
     }
 }
 
-/* Real Download Handler with GUI Modal / Notification */
-function startDownload(toolName) {
-    // 1. Paste the link you copied from the GitHub Release of my_tool.exe here.
-    const githubExeUrl = "https://github.com/andrew201428/pc_check-website/releases/download/v1.0.0/my_tool.exe"; 
+/* Dynamic Download Handler for each tool */
+function startDownload(fileName, toolDisplayName) {
+    // The base URL pointing to your GitHub Releases version
+    const baseUrl = "https://github.com/andrew201428/pc_check-website/releases/download/v1.0.0/";
+    const fullDownloadUrl = baseUrl + fileName;
 
-    // 2. Show the Download GUI / Notification on the screen
-    showDownloadModal(toolName);
+    // Show the visual notification GUI on screen
+    showDownloadModal(toolDisplayName);
 
-    // 3. Trigger the actual download of the .exe file
+    // Trigger the actual file download in the browser
     const downloadLink = document.createElement('a');
-    downloadLink.href = githubExeUrl;
-    downloadLink.download = toolName + '.exe';
+    downloadLink.href = fullDownloadUrl;
+    downloadLink.download = fileName;
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
 }
 
-// Function for the download GUI alert/box
+// Function to generate the notification box
 function showDownloadModal(toolName) {
-    // Create or use a visual notification box for the user interface
     const modalBox = document.createElement('div');
     modalBox.style.position = 'fixed';
     modalBox.style.bottom = '20px';
@@ -127,11 +127,10 @@ function showDownloadModal(toolName) {
     modalBox.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
     modalBox.style.zIndex = '1000';
     modalBox.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
-    modalBox.innerHTML = `<strong>Downloading ${toolName}.exe...</strong><br><span style="font-size: 12px; color: #00ffcc;">Check your browser downloads!</span>`;
+    modalBox.innerHTML = `<strong>Downloading ${toolName}...</strong><br><span style="font-size: 12px; color: #00ffcc;">Check your browser downloads!</span>`;
     
     document.body.appendChild(modalBox);
 
-    // The notification box will disappear after 4 seconds.
     setTimeout(() => {
         modalBox.remove();
     }, 4000);
