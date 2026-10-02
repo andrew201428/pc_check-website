@@ -96,9 +96,12 @@ function filterToolData(inputElement, listId) {
     }
 }
 
-/* Temporary secure download handler to prevent missing file errors */
-function startDownload(toolName) {
-    alert("The " + toolName + " binary package is currently being compiled for the upcoming release. It will be available for direct download shortly.");
-}
+/* Direct Download Handler */
+function startDownload(fileUrl, toolName) {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = fileUrl;
+    downloadLink.download = toolName + '.exe';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
     document.body.removeChild(downloadLink);
 }
