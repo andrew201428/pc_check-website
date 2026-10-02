@@ -96,14 +96,43 @@ function filterToolData(inputElement, listId) {
     }
 }
 
-/* Real Direct Download Handler */
+/* Real Download Handler with GUI Modal / Notification */
 function startDownload(toolName) {
-    const githubExeUrl = "sha256:936e22c15ab0abda0aee313fb73643167074b7df22552a97604cb8980e7d3e3c"; 
-    
+    // 1. Paste the link you copied from the GitHub Release of my_tool.exe here.
+    const githubExeUrl = "https://github.com/andrew201428/pc_check-website/releases/download/v1.0.0/my_tool.exe"; 
+
+    // 2. Show the Download GUI / Notification on the screen
+    showDownloadModal(toolName);
+
+    // 3. Trigger the actual download of the .exe file
     const downloadLink = document.createElement('a');
     downloadLink.href = githubExeUrl;
     downloadLink.download = toolName + '.exe';
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
+}
+
+// Function for the download GUI alert/box
+function showDownloadModal(toolName) {
+    // Create or use a visual notification box for the user interface
+    const modalBox = document.createElement('div');
+    modalBox.style.position = 'fixed';
+    modalBox.style.bottom = '20px';
+    modalBox.style.right = '20px';
+    modalBox.style.backgroundColor = '#1e1e2f';
+    modalBox.style.color = '#ffffff';
+    modalBox.style.padding = '15px 20px';
+    modalBox.style.borderRadius = '8px';
+    modalBox.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+    modalBox.style.zIndex = '1000';
+    modalBox.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
+    modalBox.innerHTML = `<strong>Downloading ${toolName}.exe...</strong><br><span style="font-size: 12px; color: #00ffcc;">Check your browser downloads!</span>`;
+    
+    document.body.appendChild(modalBox);
+
+    // The notification box will disappear after 4 seconds.
+    setTimeout(() => {
+        modalBox.remove();
+    }, 4000);
 }
