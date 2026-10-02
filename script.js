@@ -98,14 +98,11 @@ function filterToolData(inputElement, listId) {
 
 /* Dynamic Download Handler for each tool */
 function startDownload(fileName, toolDisplayName) {
-    // The base URL pointing to your GitHub Releases version
     const baseUrl = "https://github.com/andrew201428/pc_check-website/releases/download/v1.0.0/";
     const fullDownloadUrl = baseUrl + fileName;
 
-    // Show the visual notification GUI on screen
     showDownloadModal(toolDisplayName);
 
-    // Trigger the actual file download in the browser
     const downloadLink = document.createElement('a');
     downloadLink.href = fullDownloadUrl;
     downloadLink.download = fileName;
