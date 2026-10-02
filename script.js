@@ -96,10 +96,12 @@ function filterToolData(inputElement, listId) {
     }
 }
 
-/* Direct Download Handler */
-function startDownload(fileUrl, toolName) {
+/* Real Direct Download Handler */
+function startDownload(toolName) {
+    const githubExeUrl = "sha256:936e22c15ab0abda0aee313fb73643167074b7df22552a97604cb8980e7d3e3c"; 
+    
     const downloadLink = document.createElement('a');
-    downloadLink.href = fileUrl;
+    downloadLink.href = githubExeUrl;
     downloadLink.download = toolName + '.exe';
     document.body.appendChild(downloadLink);
     downloadLink.click();
