@@ -305,7 +305,7 @@ body {
     padding: 2px;
 }
 
-/* DEFAULT CLEAN BUTTONS (HINDI ANIMATED, STANDARD GRAY) */
+/* DEFAULT CLEAN BUTTONS */
 .download-btn {
     background-color: #2b2b36;
     color: #ffffff;
@@ -443,5 +443,4 @@ body {
 
 .action-btn:hover {
     background-color: #383848;
-}
 }
