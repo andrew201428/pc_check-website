@@ -30,12 +30,12 @@ body {
     overflow-x: hidden;
     position: relative;
     background-image: 
-        radial-gradient(circle at 15% 20%, rgba(138, 43, 226, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(255, 117, 24, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 15% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(255, 117, 24, 0.12) 0%, transparent 45%);
 }
 
-/* Floating Halloween Decorations */
-.halloween-decorations {
+/* Halloween Background Elements & Castle/Tombstones Scene */
+.halloween-scene-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -46,27 +46,56 @@ body {
     overflow: hidden;
 }
 
-.spooky-ghost, .spooky-pumpkin, .spooky-bat {
+.spooky-moon {
     position: absolute;
-    opacity: 0.15;
+    top: 40px;
+    right: 80px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ffebad 0%, #ff9900 60%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 153, 0, 0.4);
+    opacity: 0.25;
+}
+
+.haunted-castle {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    font-size: 8rem;
+    opacity: 0.12;
+    filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.5));
+}
+
+.tombstone {
+    position: absolute;
+    bottom: 10px;
+    font-size: 2.5rem;
+    opacity: 0.2;
+}
+
+.t-1 { left: 4%; }
+.t-2 { right: 18%; }
+
+.spooky-ghost, .spooky-bat {
+    position: absolute;
+    opacity: 0.18;
     animation: floatGhost 8s ease-in-out infinite alternate;
 }
 
-.ghost-1 { top: 15%; left: 5%; font-size: 3rem; animation-duration: 9s; }
-.ghost-2 { bottom: 10%; right: 7%; font-size: 3.5rem; animation-duration: 11s; }
-.pumpkin-1 { top: 75%; left: 8%; font-size: 2.8rem; animation-duration: 7s; }
-.pumpkin-2 { top: 25%; right: 6%; font-size: 3rem; animation-duration: 10s; }
-.bat-1 { top: 40%; left: 2%; font-size: 2rem; animation: flyBat 12s linear infinite; }
-.bat-2 { top: 60%; right: 3%; font-size: 2.2rem; animation: flyBat 15s linear infinite reverse; }
+.ghost-1 { top: 20%; left: 8%; font-size: 3.2rem; animation-duration: 9s; }
+.ghost-2 { bottom: 25%; right: 12%; font-size: 3.8rem; animation-duration: 11s; }
+.bat-1 { top: 35%; left: 3%; font-size: 2.2rem; animation: flyBat 12s linear infinite; }
+.bat-2 { top: 55%; right: 4%; font-size: 2.5rem; animation: flyBat 15s linear infinite reverse; }
 
 @keyframes floatGhost {
     0% { transform: translateY(0px) rotate(0deg); }
-    100% { transform: translateY(-25px) rotate(5deg); }
+    100% { transform: translateY(-30px) rotate(6deg); }
 }
 
 @keyframes flyBat {
     0% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(50px) translateY(-20px); }
+    50% { transform: translateX(60px) translateY(-25px); }
     100% { transform: translateX(0) translateY(0); }
 }
 
@@ -158,7 +187,7 @@ body {
 /* Hero Section */
 .dashboard-hero {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .dashboard-hero h1 {
@@ -188,6 +217,55 @@ body {
     padding: 4px 12px;
     border-radius: 20px;
     text-shadow: 0 0 8px var(--purple-glow);
+}
+
+/* Guide Section Banner */
+.guide-banner {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: linear-gradient(145deg, #120c1f, #1a102e);
+    border: 1px solid rgba(255, 117, 24, 0.3);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.guide-icon {
+    font-size: 2.5rem;
+    background: rgba(255, 117, 24, 0.1);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 117, 24, 0.2);
+}
+
+.guide-content h2 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.guide-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.guide-content ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.guide-content li {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.guide-content strong {
+    color: var(--orange-primary);
 }
 
 /* All-In-One Banner */
@@ -500,15 +578,26 @@ body {
     position: relative;
 }
 
-.toggle-password {
+/* Default clean text toggle button (no emojis) */
+.toggle-password-btn {
     position: absolute;
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 11px;
+    font-weight: 600;
     color: var(--orange-primary);
+    background: rgba(255, 117, 24, 0.1);
+    border: 1px solid rgba(255, 117, 24, 0.3);
+    padding: 3px 8px;
+    border-radius: 4px;
     cursor: pointer;
     user-select: none;
+    transition: all 0.2s;
+}
+
+.toggle-password-btn:hover {
+    background: rgba(255, 117, 24, 0.2);
 }
 
 .action-btn {
