@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detect - Haunted Halloween Edition</title>
+    <link rel="icon" type="image/png" href="https://www.svgrepo.com/show/406085/jack-o-lantern.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="halloween-decorations">
+    <div class="halloween-scene-bg">
+        <div class="spooky-moon"></div>
+        <div class="haunted-castle">🏰</div>
+        <div class="tombstone t-1">🪦</div>
+        <div class="tombstone t-2">⚰️</div>
         <div class="spooky-ghost ghost-1">👻</div>
         <div class="spooky-ghost ghost-2">👻</div>
-        <div class="spooky-pumpkin pumpkin-1">🎃</div>
-        <div class="spooky-pumpkin pumpkin-2">🎃</div>
         <div class="spooky-bat bat-1">🦇</div>
         <div class="spooky-bat bat-2">🦇</div>
     </div>
@@ -22,6 +25,7 @@
             <span>Detect Platform</span>
         </div>
         <div class="top-nav-links">
+            <a href="#guideSection">Guide</a>
             <a href="#" onclick="openFooterModal('freeTools')">Free Tools</a>
             <a href="#" onclick="openFooterModal('changelogs')">Changelogs</a>
             <a href="#" onclick="openFooterModal('privacy')">Privacy Policy</a>
@@ -36,8 +40,22 @@
     <div class="dashboard-container">
         <div class="dashboard-hero">
             <h1>Detect <span class="blood-glow-text">Version 1 Tool</span></h1>
-            <p>Next-Gen Forensic Utilities & System Diagnostics for Professional PC Checkers</p>
+            <p>Ready for a Fang-tastic Halloween Audit? Next-Gen Forensic Utilities & System Diagnostics.</p>
             <span class="creator-tag">Crafted by Lowrenz Dev</span>
+        </div>
+
+        <!-- Guide Section -->
+        <div class="guide-banner" id="guideSection">
+            <div class="guide-icon">🦇</div>
+            <div class="guide-content">
+                <h2>Spooky Checker's Guide</h2>
+                <p>Welcome to the haunted coven, PC Checker! Follow these steps to audit systems safely:</p>
+                <ul>
+                    <li><strong>1. Explore Tools:</strong> Use the live search bars inside each tool card to filter specific artifacts instantly.</li>
+                    <li><strong>2. Single or Bundle Download:</strong> Download individual diagnostic utilities or grab the entire suite using the All-In-One Bundle below.</li>
+                    <li><strong>3. Local Execution:</strong> All tools operate locally and securely on target machines without transmitting sensitive logs externally.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="all-in-one-banner">
@@ -262,7 +280,7 @@
                         <label>Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="loginPassword" required placeholder="Enter password...">
-                            <span class="toggle-password" onclick="togglePassword('loginPassword', this)">Show</span>
+                            <span class="toggle-password-btn" onclick="togglePassword('loginPassword', this)">Show</span>
                         </div>
                     </div>
                     <button type="submit" class="action-btn">Enter Crypt</button>
@@ -297,12 +315,15 @@
                         <label>Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="registerPassword" required placeholder="Create password...">
-                            <span class="toggle-password" onclick="togglePassword('registerPassword', this)">Show</span>
+                            <span class="toggle-password-btn" onclick="togglePassword('registerPassword', this)">Show</span>
                         </div>
                     </div>
                     <div class="input-group">
                         <label>Confirm Password</label>
-                        <input type="password" id="confirmPassword" required placeholder="Confirm password...">
+                        <div class="password-wrapper">
+                            <input type="password" id="confirmPassword" required placeholder="Confirm password...">
+                            <span class="toggle-password-btn" onclick="togglePassword('confirmPassword', this)">Show</span>
+                        </div>
                     </div>
                     <button type="submit" class="action-btn">Create Account</button>
                 </form>
