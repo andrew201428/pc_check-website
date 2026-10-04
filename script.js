@@ -29,12 +29,22 @@ function togglePassword(fieldId, buttonElement) {
     const passwordInput = document.getElementById(fieldId);
     if (!passwordInput) return;
     
+    const svgIcon = buttonElement.querySelector('.eye-icon');
+    
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        buttonElement.textContent = 'Hide';
+        svgIcon.innerHTML = `
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+        `;
+        buttonElement.style.color = 'var(--orange-primary)';
     } else {
         passwordInput.type = 'password';
-        buttonElement.textContent = 'Show';
+        svgIcon.innerHTML = `
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+        `;
+        buttonElement.style.color = 'var(--text-muted)';
     }
 }
 
@@ -87,7 +97,7 @@ function openFooterModal(type) {
         body.innerHTML = "Detect Version 1 Tool provides a curated suite of next-gen forensic utilities built for professional PC checkers, system diagnostics, and artifact analysis. Enhanced with haunting gothic styling, spooky backdrops, and tombstones, all tools are completely free to download and use under Lowrenz Dev.";
     } else if (type === 'changelogs') {
         title.textContent = "System Changelogs (Haunted Halloween Edition)";
-        body.innerHTML = "<strong>v1.0.9 Haunted Halloween Edition (Current):</strong><br>- Refined password visibility toggles with clean Show/Hide text buttons across all Sign In and Register fields (including confirm password).<br>- Added fully immersive Halloween background elements featuring haunted castles, tombstones, glowing moon, and spooky spirits.<br>- Added a dedicated Spooky Checker's Guide banner for easy user navigation and tool instructions.";
+        body.innerHTML = "<strong>v1.0.9 Haunted Halloween Edition (Current):</strong><br>- Refined password visibility toggles with clean SVG eye icons across Sign In, Register, and Confirm Password fields.<br>- Added fully immersive Halloween background elements featuring animated skulls, spooky ghosts, hanging bat silhouettes, and gothic moon glow.<br>- Added a dedicated Spooky Checker's Guide banner for easy user navigation and tool instructions.";
     } else if (type === 'privacy') {
         title.textContent = "Privacy Policy 📜";
         body.innerHTML = "We respect your digital privacy. Detect Version 1 Tool operates locally on your machine for diagnostic scans. We do not collect, store, or transmit personal data, execution logs, or system artifacts to external third-party servers.";
