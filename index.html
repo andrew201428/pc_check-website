@@ -4,403 +4,332 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detect - Haunted Halloween Edition</title>
-    <!-- Custom Shield Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><path d='M18 3L4 8v10c0 8.5 6 13.5 14 15 8-1.5 14-6.5 14-15V8L18 3z' fill='%230d0d12' stroke='%23ff7518' stroke-width='2'/><path d='M13 18l3.5 3.5L23 14' fill='none' stroke='%23bf00ff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='20' cy='16' r='5' fill='none' stroke='%23ff7518' stroke-width='2'/><line x1='23.5' y1='19.5' x2='27' y2='23' stroke='%23ff7518' stroke-width='2' stroke-linecap='round'/></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="watermark-top-left">DETECT // HAUNTED HALLOWEEN EDITION</div>
 
-    <!-- Spooky Floating Background Elements for Sides and Corners -->
     <div class="halloween-decorations">
-        <span class="spooky-ghost ghost-1">👻</span>
-        <span class="spooky-ghost ghost-2">👻</span>
-        <span class="spooky-pumpkin pumpkin-1">🎃</span>
-        <span class="spooky-pumpkin pumpkin-2">🎃</span>
-        <span class="spooky-bat bat-1">🦇</span>
-        <span class="spooky-bat bat-2">🦇</span>
-        <div class="haunted-fog-overlay"></div>
+        <div class="spooky-ghost ghost-1">👻</div>
+        <div class="spooky-ghost ghost-2">👻</div>
+        <div class="spooky-pumpkin pumpkin-1">🎃</div>
+        <div class="spooky-pumpkin pumpkin-2">🎃</div>
+        <div class="spooky-bat bat-1">🦇</div>
+        <div class="spooky-bat bat-2">🦇</div>
     </div>
 
-    <header class="top-nav">
+    <nav class="top-nav">
         <div class="nav-logo">
-            <!-- Custom Shield Header Logo Icon -->
-            <svg class="site-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 3L4 8v10c0 8.5 6 13.5 14 15 8-1.5 14-6.5 14-15V8L18 3z" fill="#0d0d12" stroke="#ff7518" stroke-width="2"/>
-                <path d="M13 18l3.5 3.5L23 14" fill="none" stroke="#bf00ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="20" cy="16" r="5" fill="none" stroke="#ff7518" stroke-width="2"/>
-                <line x1="23.5" y1="19.5" x2="27" y2="23" stroke="#ff7518" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <span>Detect - Tools <span style="color: #ff7518; font-size: 11px; text-shadow: 0 0 8px rgba(255,117,24,0.8);">[Haunted Edition]</span></span>
+            <span class="site-logo-icon">🎃</span>
+            <span>Detect Platform</span>
         </div>
-        
         <div class="top-nav-links">
             <a href="#" onclick="openFooterModal('freeTools')">Free Tools</a>
-            <a href="https://discord.gg/agRsP2UAPA" target="_blank">Discord</a>
             <a href="#" onclick="openFooterModal('changelogs')">Changelogs</a>
             <a href="#" onclick="openFooterModal('privacy')">Privacy Policy</a>
             <a href="#" onclick="openFooterModal('tos')">TOS</a>
         </div>
-
         <div class="nav-auth-buttons">
-            <button class="nav-btn" onclick="openAuthModal('login')">Sign In 🕯️</button>
-            <button class="nav-btn register" onclick="openAuthModal('register')">Register ⚰️</button>
+            <button class="nav-btn" onclick="openAuthModal('login')">Sign In</button>
+            <button class="nav-btn register" onclick="openAuthModal('register')">Register</button>
         </div>
-    </header>
+    </nav>
 
-    <main class="dashboard-container">
+    <div class="dashboard-container">
         <div class="dashboard-hero">
-            <h1>Cursed Forensic Tools, <span class="blood-glow-text">Reimagined & Haunted</span></h1>
-            <p>A forbidden suite of next-gen utilities built for professional PC checkers and digital investigators. Infused with dark magic and haunted diagnostics.</p>
-            <span class="creator-tag">Created by Renz Devs 🦇</span>
+            <h1>Detect <span class="blood-glow-text">Version 1 Tool</span></h1>
+            <p>Next-Gen Forensic Utilities & System Diagnostics for Professional PC Checkers</p>
+            <span class="creator-tag">Crafted by Lowrenz Dev</span>
         </div>
 
-        <!-- ALL-IN-ONE DOWNLOADER FEATURED CARD -->
         <div class="all-in-one-banner">
             <div class="aio-header">
-                <span class="featured-badge">Featured Cursed Bundle</span>
+                <span class="featured-badge">All-In-One Suite</span>
             </div>
-            <h2>ToolsDownloader All-in-One <span style="color: #ff7518;">🕷️</span></h2>
-            <p>The ultimate dark ritual bundle for your forensic tools suite. Grab every single utility in a unified, haunted installer packed with forbidden detection scripts.</p>
+            <h2>Detect Version 1 Tool - Haunted Edition</h2>
+            <p>Get access to all 9 specialized forensic and system auditing utilities in a single bundled package. Optimized for rapid performance, deep inspection, and spooky aesthetics.</p>
             
             <div class="aio-link-box">
-                <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/ToolsDownloaderAllInOne</span>
-                <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/ToolsDownloaderAllInOne')">📋</button>
+                <div class="aio-url">
+                    <span>🔗</span> https://Detect.v1/tool/releases/download/v1.0.0/Detect_v1_All.zip
+                </div>
+                <button class="copy-link-btn" onclick="copyLink('https://Detect.v1/tool/releases/download/v1.0.0/Detect_v1_All.zip')">📋</button>
             </div>
 
-            <a href="https://drive.google.com/file/d/1mC5xcL1VQ21fKmEowAYRJBOS1JlVXnaP/view?usp=sharing" target="_blank" class="download-all-btn" style="text-decoration: none; display: inline-block; text-align: center;">
-                Download Cursed All-in-One Bundle ⚡
-            </a>
+            <button class="download-all-btn" onclick="startDownload('Detect_v1_All.zip', 'Detect Version 1 All-In-One Suite')">Download All-In-One Bundle (ZIP)</button>
         </div>
-
-        <h2 style="color: #fff; margin-bottom: 20px; font-size: 22px; text-shadow: 0 0 10px rgba(255,117,24,0.3);">Haunted System Tools 🕯️</h2>
 
         <div class="tools-grid">
-            <!-- 1. RECENT CHEAT PREFETCH TRACER +++ -->
+            <!-- Tool 1 -->
             <div class="tool-card featured-card">
                 <div>
-                    <h3>Recent Cheat Prefetch Tracer +++</h3>
-                    <p>Dark magic module built specifically to extract and isolate recently executed .exe cheat binaries from Windows recent and prefetch catacombs.</p>
+                    <h3>Prefetch Inspector</h3>
+                    <p>Scans Windows Prefetch directory to analyze application execution history and timestamps.</p>
                     <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Exposes concealed cheat executable activities hiding deep within system memory trails.
+                        <strong>Mechanism:</strong> Reads C:\Windows\Prefetch metadata & hash files.
                     </div>
-                    
                     <div class="tool-search-container">
-                        <input type="text" placeholder="Search cursed executable files..." onkeyup="filterToolData(this, 'recentCheatResults')">
+                        <input type="text" placeholder="Search prefetch logs..." onkeyup="filterToolData(this, 'list1')">
                     </div>
-                    <div id="recentCheatResults" class="tool-search-list">
-                        <span class="search-item">Recent_Cursed_Cheat_Loader.exe</span>
-                        <span class="search-item">Prefetch_Target_Haunted_Client.exe</span>
-                        <span class="search-item">Last_Run_Possessed_Tool_v2.exe</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/RecentCheatPrefetchTracerPlus</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/RecentCheatPrefetchTracerPlus')">📋</button>
+                    <div class="tool-search-list" id="list1">
+                        <div class="search-item">cmd.exe-3F2A1B.pf</div>
+                        <div class="search-item">powershell.exe-9C8D7E.pf</div>
+                        <div class="search-item">explorer.exe-1A2B3C.pf</div>
+                        <div class="search-item">notepad.exe-4E5F6A.pf</div>
                     </div>
                 </div>
-                <a href="https://drive.google.com/file/d/1jhEj5hllhk_ua2vSRqva2bvCdBZveCh-/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
+                <button class="download-btn" onclick="startDownload('PrefetchInspector.exe', 'Prefetch Inspector')">Download Tool</button>
             </div>
 
-            <!-- 2. APPCRASH & HISTORY TRACER -->
+            <!-- Tool 2 -->
             <div class="tool-card">
                 <div>
-                    <h3>AppCrash & History Tracer</h3>
-                    <p>Spooky diagnostic utility built to inspect crashed application spirits, system error ghosts, and browser download trails instantly.</p>
+                    <h3>Recent Files Audit</h3>
+                    <p>Inspects user shortcut links and recently accessed documents in quick succession.</p>
                     <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Scans Windows Error Reporting (WER) tombs and broken execution timelines.
+                        <strong>Mechanism:</strong> Parses Recent & AutomaticDestinations directories.
                     </div>
-                    
                     <div class="tool-search-container">
-                        <input type="text" placeholder="Search crash tombs..." onkeyup="filterToolData(this, 'appCrashResults')">
+                        <input type="text" placeholder="Search recent shortcuts..." onkeyup="filterToolData(this, 'list2')">
                     </div>
-                    <div id="appCrashResults" class="tool-search-list">
-                        <span class="search-item">WER_AppCrash_RobloxPlayer.exe.12889.dmp</span>
-                        <span class="search-item">Haunted_Download_History_Cache.txt</span>
-                        <span class="search-item">Exception_Fault_Spirit_ntdll.dll</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/AppCrashHistoryTracer</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/AppCrashHistoryTracer')">📋</button>
+                    <div class="tool-search-list" id="list2">
+                        <div class="search-item">evidence_log.txt.lnk</div>
+                        <div class="search-item">payload_script.py.lnk</div>
+                        <div class="search-item">confidential.docx.lnk</div>
                     </div>
                 </div>
-                <a href="https://drive.google.com/file/d/13JOaU2TPlJ_OV1IiGS3ztZEmRsxtbCUk/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
+                <button class="download-btn" onclick="startDownload('RecentAudit.exe', 'Recent Files Audit')">Download Tool</button>
             </div>
 
-            <!-- 3. DELETE CHEAT HISTORY +++ -->
+            <!-- Tool 3 -->
             <div class="tool-card">
                 <div>
-                    <h3>Delete Cheat History +++</h3>
-                    <p>Forbidden forensic scanner designed to unearth wiped cheat executables, phantom injectors, and JJSploit remnants from the underworld.</p>
+                    <h3>Temp File Scanner</h3>
+                    <p>Detects leftover temporary files, cache debris, and hidden execution folders.</p>
                     <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Parses unallocated disk sectors and residual directory graves for hidden payloads.
+                        <strong>Mechanism:</strong> Deep queries %TEMP% and AppData\Local\Temp paths.
                     </div>
-
                     <div class="tool-search-container">
-                        <input type="text" placeholder="Search wiped cheat graves..." onkeyup="filterToolData(this, 'deleteCheatResults')">
+                        <input type="text" placeholder="Search temp files..." onkeyup="filterToolData(this, 'list3')">
                     </div>
-                    <div id="deleteCheatResults" class="tool-search-list">
-                        <span class="search-item">Deleted_JJSploit_Phantom_v6.exe</span>
-                        <span class="search-item">Wiped_Exploit_Payload_Crypt.dll</span>
-                        <span class="search-item">Removed_Injector_Underworld.bin</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/DeleteCheatHistoryPlus</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/DeleteCheatHistoryPlus')">📋</button>
+                    <div class="tool-search-list" id="list3">
+                        <div class="search-item">tmp_runtime_01.bin</div>
+                        <div class="search-item">hs_err_pid1234.log</div>
+                        <div class="search-item">discord_cache_x.tmp</div>
                     </div>
                 </div>
-                <a href="https://drive.google.com/file/d/1dImT_kKoBL68QwC-tSTUw_3oUolAhdic/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
+                <button class="download-btn" onclick="startDownload('TempScanner.exe', 'Temp File Scanner')">Download Tool</button>
             </div>
 
-            <!-- 4. APPDATA & PROCESS / SYSTEM INFORMER ANALYZER -->
+            <!-- Tool 4 -->
             <div class="tool-card">
                 <div>
-                    <h3>AppData & Process Analyzer</h3>
-                    <p>Peers into hidden %appdata% crypts and acts as a demonic System Informer to inspect active handles and hidden background rituals.</p>
+                    <h3>Browser History Sleuth</h3>
+                    <p>Extracts SQLite history databases to trace URL visits and download logs.</p>
                     <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Scans Roaming/Local/LocalLow catacombs and queries kernel process spirits.
+                        <strong>Mechanism:</strong> Reads Chrome/Edge/Firefox profile history files.
                     </div>
-
                     <div class="tool-search-container">
-                        <input type="text" placeholder="Search AppData crypts..." onkeyup="filterToolData(this, 'appdataProcessResults')">
+                        <input type="text" placeholder="Search browser domains..." onkeyup="filterToolData(this, 'list4')">
                     </div>
-                    <div id="appdataProcessResults" class="tool-search-list">
-                        <span class="search-item">AppData_Local_Hidden_Cursed.json</span>
-                        <span class="search-item">Process_Injected_Phantom_Handle.dll</span>
-                        <span class="search-item">System_Informer_Demon_Task.exe</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/AppDataProcessAnalyzer</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/AppDataProcessAnalyzer')">📋</button>
+                    <div class="tool-search-list" id="list4">
+                        <div class="search-item">github.com/lowrenz</div>
+                        <div class="search-item">discord.com/channels</div>
+                        <div class="search-item">virustotal.com/gui</div>
                     </div>
                 </div>
-                <a href="https://drive.google.com/file/d/1dDtoVsNiG8oS3kOJf7wC9RMchgIlbaaH/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
+                <button class="download-btn" onclick="startDownload('BrowserSleuth.exe', 'Browser History Sleuth')">Download Tool</button>
             </div>
 
-            <!-- 5. DEEP TRACE FORENSICS & AUDIT -->
-            <div class="tool-card">
-                <div>
-                    <h3>Deep Trace Forensics & Audit</h3>
-                    <p>Advanced undelete and deep artifact scanner designed to summon deleted malware spirits and original source web domains.</p>
-                    <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Scans NTFS Master File Table (MFT) bloodlines and browser cache altars.
-                    </div>
-
-                    <div class="tool-search-container">
-                        <input type="text" placeholder="Search deleted artifacts..." onkeyup="filterToolData(this, 'deepTraceResults')">
-                    </div>
-                    <div id="deepTraceResults" class="tool-search-list">
-                        <span class="search-item">MFT_Record_Haunted_Injector.dll</span>
-                        <span class="search-item">Browser_Cache_Source_Spirit.log</span>
-                        <span class="search-item">Master_File_Table_Crypt_Log</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/DeepTraceAudit</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/DeepTraceAudit')">📋</button>
-                    </div>
-                </div>
-                <a href="https://drive.google.com/file/d/1bOiJYWUCymHvwHlcmHzLjk-kLAphG4Wg/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
-            </div>
-
-            <!-- 6. NTFS JOURNAL EXPLORER -->
-            <div class="tool-card">
-                <div>
-                    <h3>NTFS Journal Explorer</h3>
-                    <p>Advanced system log parser featuring integrated USN Journal bypass detection and blood-curdling keyword filtering.</p>
-                    <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Parses NTFS USN Change Journals to extract unholy file system curses.
-                    </div>
-
-                    <div class="tool-search-container">
-                        <input type="text" placeholder="Search USN journal logs..." onkeyup="filterToolData(this, 'ntfsResults')">
-                    </div>
-                    <div id="ntfsResults" class="tool-search-list">
-                        <span class="search-item">USN_Record_File_Create_Curse</span>
-                        <span class="search-item">USN_Record_Data_Blood_Overwrite</span>
-                        <span class="search-item">USN_Journal_Haunted_Bypass</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/NTFSJournalExplorer</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/NTFSJournalExplorer')">📋</button>
-                    </div>
-                </div>
-                <a href="https://drive.google.com/file/d/1XhX7srTzp30KxesmWQUBxZa5zycLCQPz/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
-            </div>
-
-            <!-- 7. SHELLBAGS TIMELINE ANALYZER -->
-            <div class="tool-card">
-                <div>
-                    <h3>ShellBags Timeline Analyzer</h3>
-                    <p>Examines Windows Registry ShellBags crypts to trace historical folder hauntings and cursed USB connections.</p>
-                    <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Decodes UsrClass.dat and NTUSER.DAT dark registry scrolls.
-                    </div>
-
-                    <div class="tool-search-container">
-                        <input type="text" placeholder="Search ShellBags scrolls..." onkeyup="filterToolData(this, 'shellBagsResults')">
-                    </div>
-                    <div id="shellBagsResults" class="tool-search-list">
-                        <span class="search-item">UsrClass_Dat_Registry_Crypt</span>
-                        <span class="search-item">USB_Mounted_Spirit_History</span>
-                        <span class="search-item">Deleted_Directory_Graveyard_Path</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/ShellBagsAnalyzer</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/ShellBagsAnalyzer')">📋</button>
-                    </div>
-                </div>
-                <a href="https://drive.google.com/file/d/1IUfrWo5IugkzBrh1umlgfuw5WKlBSiiw/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
-            </div>
-
-            <!-- 8. PREFETCH & TIMELINE FORENSICS -->
-            <div class="tool-card">
-                <div>
-                    <h3>Prefetch & Timeline Forensics</h3>
-                    <p>Extracts and audits Windows Prefetch (.pf) ruins to reveal execution frequency and unholy execution timestamps.</p>
-                    <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Reads ancient headers and execution metrics from C:\Windows\Prefetch.
-                    </div>
-
-                    <div class="tool-search-container">
-                        <input type="text" placeholder="Search prefetch ruins..." onkeyup="filterToolData(this, 'prefetchResults')">
-                    </div>
-                    <div id="prefetchResults" class="tool-search-list">
-                        <span class="search-item">Prefetch_Header_Run_Count_Crypt</span>
-                        <span class="search-item">First_Last_Execution_Ghost_Timestamp</span>
-                        <span class="search-item">Windows_Prefetch_Graveyard_Scan</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/PrefetchForensics</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/PrefetchForensics')">📋</button>
-                    </div>
-                </div>
-                <a href="https://drive.google.com/file/d/1ADZQX8CaZvWTequa2cDPNPvb4PTj0uFZ/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
-            </div>
-
-            <!-- 9. USB & REGISTRY PERSISTENCE HUNTER -->
+            <!-- Tool 5 -->
             <div class="tool-card featured-card">
                 <div>
-                    <h3>USB & Registry Persistence Hunter</h3>
-                    <p>Specialized necromancy module built to track external USB device spirits and unmask hidden registry autorun curses.</p>
+                    <h3>Process Monitor X</h3>
+                    <p>Real-time tracking of active Windows background services and hidden handles.</p>
                     <div class="mechanism-box">
-                        <strong>Necromancy Log:</strong> Scans Windows Registry Run/RunOnce dark altars and setupapi device logs.
+                        <strong>Mechanism:</strong> Hooks Windows NTQuerySystemInformation API.
                     </div>
-
                     <div class="tool-search-container">
-                        <input type="text" placeholder="Search persistence curses & USB..." onkeyup="filterToolData(this, 'persistenceResults')">
+                        <input type="text" placeholder="Search active PIDs..." onkeyup="filterToolData(this, 'list5')">
                     </div>
-                    <div id="persistenceResults" class="tool-search-list">
-                        <span class="search-item">Registry_RunKey_Autorun_Demon</span>
-                        <span class="search-item">USB_Stor_Device_Serial_Phantom</span>
-                        <span class="search-item">Hidden_Startup_Service_Hex</span>
-                    </div>
-
-                    <div class="aio-link-box">
-                        <span class="aio-url"><span class="link-icon">🔗</span> detect.ac/tool/USBRegistryPersistenceHunter</span>
-                        <button class="copy-link-btn" onclick="copyLink('detect.ac/tool/USBRegistryPersistenceHunter')">📋</button>
+                    <div class="tool-search-list" id="list5">
+                        <div class="search-item">PID 4120 - svchost.exe</div>
+                        <div class="search-item">PID 6890 - discord.exe</div>
+                        <div class="search-item">PID 1024 - python.exe</div>
                     </div>
                 </div>
-                <a href="https://drive.google.com/file/d/11mTHC_kqwQpWzaMGZUcw99HokIfTry1R/view?usp=sharing" target="_blank" class="download-btn" style="text-decoration: none; display: inline-block; text-align: center;">Summon .exe 🔮</a>
+                <button class="download-btn" onclick="startDownload('ProcessMonitorX.exe', 'Process Monitor X')">Download Tool</button>
+            </div>
+
+            <!-- Tool 6 -->
+            <div class="tool-card">
+                <div>
+                    <h3>Registry Hive Reader</h3>
+                    <p>Parses SYSTEM, SOFTWARE, and NTUSER.DAT registry hives for artifact traces.</p>
+                    <div class="mechanism-box">
+                        <strong>Mechanism:</strong> Direct file mount of live Windows registry hives.
+                    </div>
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search registry keys..." onkeyup="filterToolData(this, 'list6')">
+                    </div>
+                    <div class="tool-search-list" id="list6">
+                        <div class="search-item">NTUSER.DAT\Software\Classes</div>
+                        <div class="search-item">SYSTEM\CurrentControlSet\Services</div>
+                        <div class="search-item">SOFTWARE\Microsoft\Windows\Run</div>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('RegistryHiveReader.exe', 'Registry Hive Reader')">Download Tool</button>
+            </div>
+
+            <!-- Tool 7 -->
+            <div class="tool-card">
+                <div>
+                    <h3>USB Storage Tracker</h3>
+                    <p>Logs historical USB device insertions, serial numbers, and first/last connected dates.</p>
+                    <div class="mechanism-box">
+                        <strong>Mechanism:</strong> Queries USBSTOR and Enum\USB registry keys.
+                    </div>
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search USB serials..." onkeyup="filterToolData(this, 'list7')">
+                    </div>
+                    <div class="tool-search-list" id="list7">
+                        <div class="search-item">SanDisk_Cruzer_Glide_4C53000...</div>
+                        <div class="search-item">Kingston_DataTraveler_3.0...</div>
+                        <div class="search-item">Generic_Flash_Disk_8B21...</div>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('USBTracker.exe', 'USB Storage Tracker')">Download Tool</button>
+            </div>
+
+            <!-- Tool 8 -->
+            <div class="tool-card">
+                <div>
+                    <h3>Event Log Analyzer</h3>
+                    <p>Scans Windows Security, System, and Application .evtx logs for anomalies.</p>
+                    <div class="mechanism-box">
+                        <strong>Mechanism:</strong> Parses Windows Event Log binary structures.
+                    </div>
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search event IDs..." onkeyup="filterToolData(this, 'list8')">
+                    </div>
+                    <div class="tool-search-list" id="list8">
+                        <div class="search-item">Event ID 4624 - Successful Logon</div>
+                        <div class="search-item">Event ID 7045 - New Service Installed</div>
+                        <div class="search-item">Event ID 1102 - Audit Log Cleared</div>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('EventLogAnalyzer.exe', 'Event Log Analyzer')">Download Tool</button>
+            </div>
+
+            <!-- Tool 9 -->
+            <div class="tool-card featured-card">
+                <div>
+                    <h3>Network Connection Sleuth</h3>
+                    <p>Identifies active TCP/UDP connections, established sockets, and remote endpoints.</p>
+                    <div class="mechanism-box">
+                        <strong>Mechanism:</strong> Interfaces with GetExtendedTcpTable system APIs.
+                    </div>
+                    <div class="tool-search-container">
+                        <input type="text" placeholder="Search sockets/IPs..." onkeyup="filterToolData(this, 'list9')">
+                    </div>
+                    <div class="tool-search-list" id="list9">
+                        <div class="search-item">TCP 192.168.1.15:52410 ESTABLISHED</div>
+                        <div class="search-item">TCP 142.250.190.46:443 ESTABLISHED</div>
+                        <div class="search-item">UDP 0.0.0.0:53 LISTENING</div>
+                    </div>
+                </div>
+                <button class="download-btn" onclick="startDownload('NetworkSleuth.exe', 'Network Connection Sleuth')">Download Tool</button>
             </div>
         </div>
+    </div>
 
-        <footer class="site-footer">
-            <p class="footer-copyright">© 2026 Detect - Tools. Created by Renz Devs. All Rights Reserved (Happy Haunted Halloween 🎃👻).</p>
-        </footer>
-    </main>
+    <footer class="site-footer">
+        <p>&copy; 2026 Detect Version 1 Tool &bull; Haunted Halloween Edition &bull; Designed & Developed by Lowrenz Dev</p>
+    </footer>
 
-    <!-- AUTHENTICATION MODAL WITH SPOOKY HAUNTED STYLING -->
-    <div id="authModal" class="modal-overlay">
-        <div class="modal-content auth-box haunted-modal">
+    <!-- AUTH MODAL -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-content haunted-modal">
             <span class="close-modal" onclick="closeAuthModal()">&times;</span>
             
+            <!-- Login Form -->
             <div id="loginFormContainer">
-                <h2 style="color: #ff7518; margin-bottom: 20px; text-shadow: 0 0 10px rgba(255,117,24,0.6);">Sign In to Crypt <span style="font-size: 16px;">🦇</span></h2>
+                <h2 style="color: #fff; margin-bottom: 20px; font-size: 20px;">Sign In to Coven</h2>
                 <form onsubmit="handleLogin(event)">
                     <div class="input-group">
-                        <label>Username / Spirit Name</label>
-                        <input type="text" required placeholder="Enter your username">
-                    </div>
-                    <div class="input-group">
-                        <label>Password / Secret Key</label>
-                        <div class="password-wrapper">
-                            <input type="password" id="loginPassword" required placeholder="Enter password">
-                            <span class="toggle-password" onclick="togglePassword('loginPassword', this)">Show</span>
-                        </div>
-                    </div>
-                    <button type="submit" class="action-btn">Enter the Crypt ⚡</button>
-                </form>
-
-                <div class="social-auth-separator"><span>or bind soul with</span></div>
-                
-                <div class="social-auth-buttons">
-                    <button class="social-btn google-btn" onclick="socialAuth('Google')">
-                        <svg class="social-logo" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.3 8.9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.3 14.7c-.2-.7-.4-1.5-.4-2.7s.2-2 .4-2.7L1.6 6.4C.6 8.4 0 10.6 0 13s.6 4.6 1.6 6.6l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.3-6.7-5.3L1.6 15C3.5 18.8 7.4 23 12 23z"/></svg>
-                        <span>Connect to Google</span>
-                    </button>
-                    <button class="social-btn github-btn" onclick="socialAuth('GitHub')">
-                        <svg class="social-logo" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                        <span>Connect to GitHub</span>
-                    </button>
-                </div>
-            </div>
-
-            <div id="registerFormContainer" style="display: none;">
-                <h2 style="color: #ff7518; margin-bottom: 20px; text-shadow: 0 0 10px rgba(255,117,24,0.6);">Join the Coven <span style="font-size: 16px;">🎃</span></h2>
-                <form onsubmit="handleRegister(event)">
-                    <div class="input-group">
-                        <label>Email Address</label>
-                        <input type="email" required placeholder="Enter your email">
-                    </div>
-                    <div class="input-group">
-                        <label>Username / Spirit Handle</label>
-                        <input type="text" required placeholder="Choose a username">
+                        <label>Email or Username</label>
+                        <input type="text" required placeholder="Enter your handle...">
                     </div>
                     <div class="input-group">
                         <label>Password</label>
                         <div class="password-wrapper">
-                            <input type="password" id="registerPassword" required placeholder="Create password">
+                            <input type="password" id="loginPassword" required placeholder="Enter password...">
+                            <span class="toggle-password" onclick="togglePassword('loginPassword', this)">Show</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="action-btn">Enter Crypt</button>
+                </form>
+
+                <div class="social-auth-separator">Or connect with</div>
+                <div class="social-auth-buttons">
+                    <button class="social-btn" onclick="socialAuth('Google')">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="social-logo" alt="Google">
+                        Sign in with Google
+                    </button>
+                    <button class="social-btn" onclick="socialAuth('GitHub')">
+                        <img src="https://www.svgrepo.com/show/512317/github-142.svg" class="social-logo" alt="GitHub">
+                        Sign in with GitHub
+                    </button>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerFormContainer" style="display: none;">
+                <h2 style="color: #fff; margin-bottom: 20px; font-size: 20px;">Join the Coven</h2>
+                <form onsubmit="handleRegister(event)">
+                    <div class="input-group">
+                        <label>Username</label>
+                        <input type="text" required placeholder="Choose a handle...">
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" required placeholder="Enter email...">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="registerPassword" required placeholder="Create password...">
                             <span class="toggle-password" onclick="togglePassword('registerPassword', this)">Show</span>
                         </div>
                     </div>
                     <div class="input-group">
                         <label>Confirm Password</label>
-                        <div class="password-wrapper">
-                            <input type="password" id="confirmPassword" required placeholder="Confirm password">
-                            <span class="toggle-password" onclick="togglePassword('confirmPassword', this)">Show</span>
-                        </div>
+                        <input type="password" id="confirmPassword" required placeholder="Confirm password...">
                     </div>
-                    <button type="submit" class="action-btn">Perform Ritual ⚡</button>
+                    <button type="submit" class="action-btn">Create Account</button>
                 </form>
 
-                <div class="social-auth-separator"><span>or bind soul with</span></div>
-                
+                <div class="social-auth-separator">Or register with</div>
                 <div class="social-auth-buttons">
-                    <button class="social-btn google-btn" onclick="socialAuth('Google')">
-                        <svg class="social-logo" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.3 8.9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.3 14.7c-.2-.7-.4-1.5-.4-2.7s.2-2 .4-2.7L1.6 6.4C.6 8.4 0 10.6 0 13s.6 4.6 1.6 6.6l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.3-6.7-5.3L1.6 15C3.5 18.8 7.4 23 12 23z"/></svg>
-                        <span>Connect with Google</span>
+                    <button class="social-btn" onclick="socialAuth('Google')">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="social-logo" alt="Google">
+                        Register with Google
                     </button>
-                    <button class="social-btn github-btn" onclick="socialAuth('GitHub')">
-                        <svg class="social-logo" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                        <span>Connect with GitHub</span>
+                    <button class="social-btn" onclick="socialAuth('GitHub')">
+                        <img src="https://www.svgrepo.com/show/512317/github-142.svg" class="social-logo" alt="GitHub">
+                        Register with GitHub
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- FOOTER INFO MODAL -->
-    <div id="footerModal" class="modal-overlay">
+    <!-- FOOTER MODAL -->
+    <div class="modal-overlay" id="footerModal">
         <div class="modal-content haunted-modal">
             <span class="close-modal" onclick="closeFooterModal()">&times;</span>
-            <h3 id="footerModalTitle" style="color: #ff7518; margin-bottom: 15px; font-size: 20px; text-shadow: 0 0 8px rgba(255,117,24,0.5);">Information</h3>
-            <div id="footerModalBody" style="color: #b0a8b9; font-size: 13px; line-height: 1.6; max-height: 300px; overflow-y: auto;"></div>
+            <h2 id="footerModalTitle" style="color: #fff; margin-bottom: 15px; font-size: 20px;">Information</h2>
+            <p id="footerModalBody" style="color: #c4b8db; font-size: 13px; line-height: 1.6;"></p>
         </div>
     </div>
 
