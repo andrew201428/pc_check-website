@@ -4,7 +4,7 @@
    ========================================================== */
 
 :root {
-    --bg-deep: #090510;
+    --bg-deep: #07030e;
     --bg-card: #120c1f;
     --bg-card-hover: #1a102e;
     --orange-primary: #ff7518;
@@ -30,11 +30,11 @@ body {
     overflow-x: hidden;
     position: relative;
     background-image: 
-        radial-gradient(circle at 15% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 45%),
-        radial-gradient(circle at 85% 75%, rgba(255, 117, 24, 0.12) 0%, transparent 45%);
+        radial-gradient(circle at 15% 20%, rgba(138, 43, 226, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(255, 117, 24, 0.15) 0%, transparent 50%);
 }
 
-/* Advanced Halloween Atmospheric Background & Scene */
+/* Reference Halloween Atmospheric Background (Moon, Spooky Tree Silhouette, Animated Bats) */
 .halloween-scene-bg {
     position: fixed;
     top: 0;
@@ -48,86 +48,44 @@ body {
 
 .spooky-moon {
     position: absolute;
-    top: 40px;
-    right: 80px;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, #ffebad 0%, #ff9900 60%, transparent 100%);
+    top: 50px;
+    right: 100px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, #fff5d1 0%, #ffbb33 60%, #ff7518 100%);
     border-radius: 50%;
-    box-shadow: 0 0 50px rgba(255, 153, 0, 0.4);
-    opacity: 0.25;
+    box-shadow: 0 0 70px rgba(255, 187, 51, 0.4);
+    opacity: 0.3;
 }
 
-.floating-skull {
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0.15;
-    animation: floatSkull 10s ease-in-out infinite alternate;
-    filter: drop-shadow(0 0 10px rgba(255, 117, 24, 0.4));
-}
-
-.skull-1 { top: 15%; left: 5%; animation-duration: 9s; }
-.skull-2 { top: 60%; right: 7%; animation-duration: 12s; }
-
-.haunted-house-silhouette {
+/* Detailed Spooky Dead Tree Silhouette on Left */
+.dead-tree-left {
     position: absolute;
     bottom: 0;
-    right: 3%;
-    font-size: 9rem;
-    opacity: 0.1;
-    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.6));
+    left: 0;
+    width: 320px;
+    height: 450px;
+    background: radial-gradient(ellipse at bottom, #120c1f 0%, #07030e 100%);
+    clip-path: polygon(40% 100%, 35% 70%, 20% 55%, 10% 45%, 0% 40%, 12% 35%, 25% 40%, 30% 25%, 15% 15%, 5% 5%, 22% 18%, 35% 25%, 48% 10%, 55% 28%, 68% 15%, 60% 32%, 75% 30%, 65% 45%, 85% 48%, 65% 55%, 55% 70%, 50% 100%);
+    opacity: 0.35;
 }
 
-.hanging-corpse-element {
+/* Animated Flying Bats */
+.flying-bat {
     position: absolute;
-    top: 0;
-    left: 15%;
-    font-size: 3.5rem;
-    opacity: 0.18;
-    animation: swingCorpse 4s ease-in-out infinite alternate;
-    transform-origin: top center;
+    font-size: 2rem;
+    opacity: 0.4;
+    animation: flyBatsPath 14s linear infinite;
 }
 
-.tombstone {
-    position: absolute;
-    bottom: 10px;
-    font-size: 2.5rem;
-    opacity: 0.2;
-}
+.bat-1 { top: 20%; left: -10%; animation-duration: 12s; animation-delay: 0s; }
+.bat-2 { top: 35%; left: -15%; animation-duration: 16s; animation-delay: 4s; font-size: 1.5rem; }
+.bat-3 { top: 15%; left: -5%; animation-duration: 10s; animation-delay: 2s; font-size: 2.3rem; }
 
-.t-1 { left: 4%; }
-.t-2 { right: 18%; }
-
-.spooky-ghost, .spooky-bat {
-    position: absolute;
-    opacity: 0.18;
-    animation: floatGhost 8s ease-in-out infinite alternate;
-}
-
-.ghost-1 { top: 20%; left: 8%; font-size: 3.2rem; animation-duration: 9s; }
-.ghost-2 { bottom: 25%; right: 12%; font-size: 3.8rem; animation-duration: 11s; }
-.bat-1 { top: 35%; left: 3%; font-size: 2.2rem; animation: flyBat 12s linear infinite; }
-.bat-2 { top: 55%; right: 4%; font-size: 2.5rem; animation: flyBat 15s linear infinite reverse; }
-
-@keyframes floatSkull {
-    0% { transform: translateY(0px) rotate(0deg); }
-    100% { transform: translateY(-35px) rotate(-8deg); }
-}
-
-@keyframes swingCorpse {
-    0% { transform: rotate(-5deg); }
-    100% { transform: rotate(5deg); }
-}
-
-@keyframes floatGhost {
-    0% { transform: translateY(0px) rotate(0deg); }
-    100% { transform: translateY(-30px) rotate(6deg); }
-}
-
-@keyframes flyBat {
-    0% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(60px) translateY(-25px); }
-    100% { transform: translateX(0) translateY(0); }
+@keyframes flyBatsPath {
+    0% { transform: translate(0, 0) scale(0.8) rotate(-10deg); }
+    50% { transform: translate(55vw, -30px) scale(1.2) rotate(15deg); }
+    100% { transform: translate(110vw, 40px) scale(0.9) rotate(-5deg); }
 }
 
 /* Top Navigation */
@@ -151,6 +109,11 @@ body {
     font-size: 1.1rem;
     color: var(--orange-primary);
     text-shadow: 0 0 10px var(--orange-glow);
+}
+
+.logo-svg {
+    fill: var(--orange-primary);
+    filter: drop-shadow(0 0 8px var(--orange-glow));
 }
 
 .top-nav-links {
@@ -527,7 +490,7 @@ body {
     font-size: 12px;
     border-top: 1px solid var(--border-color);
     margin-top: 60px;
-    background: rgba(9, 5, 16, 0.9);
+    background: rgba(7, 3, 14, 0.9);
 }
 
 /* Modals */
@@ -605,7 +568,7 @@ body {
     border-color: var(--orange-primary);
 }
 
-/* Password Wrapper and SVG Eye Icon Styles */
+/* Password Wrapper & Clean Default Eye Icon Toggle */
 .password-wrapper {
     position: relative;
 }
