@@ -30,7 +30,7 @@ function togglePassword(fieldId, iconElement) {
 
 function handleLogin(event) {
     event.preventDefault();
-    alert("Successfully logged into the haunted system!");
+    alert("Successfully entered the haunted crypt!");
     closeAuthModal();
 }
 
@@ -40,22 +40,22 @@ function handleRegister(event) {
     const confirmPass = document.getElementById('confirmPassword').value;
 
     if (pass !== confirmPass) {
-        alert("Passwords do not match! Please check again.");
+        alert("Passwords do not match! The ritual has failed.");
         return;
     }
 
-    alert("Account successfully created and blessed with dark magic!");
+    alert("Account successfully created and bound to the coven!");
     closeAuthModal();
 }
 
 function socialAuth(providerName) {
-    alert(`Connecting securely with ${providerName} account... 🎃`);
+    alert(`Establishing secure ghostly link with ${providerName}... 👻`);
     closeAuthModal();
 }
 
 function copyLink(urlText) {
     navigator.clipboard.writeText(urlText);
-    alert("Spooky tool link copied to clipboard successfully!");
+    alert("Haunted tool link copied to clipboard successfully!");
 }
 
 /* Footer Modal handler for Changelogs, Privacy Policy, TOS, and Free Tools */
@@ -67,11 +67,11 @@ function openFooterModal(type) {
     modal.style.display = 'flex';
 
     if (type === 'freeTools') {
-        title.textContent = "Free Tools Overview (Halloween Edition)";
-        body.innerHTML = "Detect Version 1 Tool provides a curated suite of 9 next-gen forensic utilities built for professional PC checkers, system diagnostics, and artifact analysis. Enhanced with Halloween elements, all tools are completely free to download and use.";
+        title.textContent = "Free Cursed Tools Overview";
+        body.innerHTML = "Detect Version 1 Tool provides a curated suite of 9 next-gen forensic utilities built for professional PC checkers, system diagnostics, and artifact analysis. Enhanced with haunting gothic styling, all tools are completely free to download and use.";
     } else if (type === 'changelogs') {
         title.textContent = "System Changelogs";
-        body.innerHTML = "<strong>v1.0.6 Halloween Release (Current):</strong><br>- Infused full website with spooky Halloween designs and eerie glowing accents.<br>- Integrated official Google and GitHub social connect buttons with true vector logos.<br>- Added USB & Registry Persistence Hunter.<br>- Upgraded dashboard grid system into a streamlined 3-column layout.";
+        body.innerHTML = "<strong>v1.0.7 Haunted Edition (Current):</strong><br>- Enhanced side backgrounds with floating gothic elements, glowing vignettes, and spooky glows.<br>- Redesigned all PC check tool cards and action buttons with eerie dark magic hover animations.<br>- Upgraded Sign In and Register modals with immersive dark ritual styles.<br>- Integrated official Google and GitHub login connectors.";
     } else if (type === 'privacy') {
         title.textContent = "Privacy Policy";
         body.innerHTML = "We respect your digital privacy. Detect Version 1 Tool operates locally on your machine for diagnostic scans. We do not collect, store, or transmit personal data, execution logs, or system artifacts to external third-party servers.";
@@ -122,15 +122,15 @@ function showDownloadModal(toolName) {
     modalBox.style.position = 'fixed';
     modalBox.style.bottom = '20px';
     modalBox.style.right = '20px';
-    modalBox.style.backgroundColor = '#161022';
+    modalBox.style.backgroundColor = '#120c1f';
     modalBox.style.border = '1px solid #ff7518';
     modalBox.style.color = '#ffffff';
     modalBox.style.padding = '15px 20px';
     modalBox.style.borderRadius = '8px';
-    modalBox.style.boxShadow = '0 4px 15px rgba(255,117,24,0.3)';
+    modalBox.style.boxShadow = '0 6px 20px rgba(255,117,24,0.4)';
     modalBox.style.zIndex = '1000';
     modalBox.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
-    modalBox.innerHTML = `<strong>Downloading ${toolName}... 🎃</strong><br><span style="font-size: 12px; color: #ff7518;">Check your browser downloads!</span>`;
+    modalBox.innerHTML = `<strong>Summoning ${toolName}... 🎃</strong><br><span style="font-size: 12px; color: #ff7518;">Check your browser downloads!</span>`;
     
     document.body.appendChild(modalBox);
 
