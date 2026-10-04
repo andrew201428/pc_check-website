@@ -34,7 +34,7 @@ body {
         radial-gradient(circle at 85% 75%, rgba(255, 117, 24, 0.12) 0%, transparent 45%);
 }
 
-/* Halloween Background Elements & Castle/Tombstones Scene */
+/* Advanced Halloween Atmospheric Background & Scene */
 .halloween-scene-bg {
     position: fixed;
     top: 0;
@@ -58,13 +58,34 @@ body {
     opacity: 0.25;
 }
 
-.haunted-castle {
+.floating-skull {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.15;
+    animation: floatSkull 10s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 10px rgba(255, 117, 24, 0.4));
+}
+
+.skull-1 { top: 15%; left: 5%; animation-duration: 9s; }
+.skull-2 { top: 60%; right: 7%; animation-duration: 12s; }
+
+.haunted-house-silhouette {
     position: absolute;
     bottom: 0;
-    right: 5%;
-    font-size: 8rem;
-    opacity: 0.12;
-    filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.5));
+    right: 3%;
+    font-size: 9rem;
+    opacity: 0.1;
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.6));
+}
+
+.hanging-corpse-element {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    font-size: 3.5rem;
+    opacity: 0.18;
+    animation: swingCorpse 4s ease-in-out infinite alternate;
+    transform-origin: top center;
 }
 
 .tombstone {
@@ -87,6 +108,16 @@ body {
 .ghost-2 { bottom: 25%; right: 12%; font-size: 3.8rem; animation-duration: 11s; }
 .bat-1 { top: 35%; left: 3%; font-size: 2.2rem; animation: flyBat 12s linear infinite; }
 .bat-2 { top: 55%; right: 4%; font-size: 2.5rem; animation: flyBat 15s linear infinite reverse; }
+
+@keyframes floatSkull {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-35px) rotate(-8deg); }
+}
+
+@keyframes swingCorpse {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
 
 @keyframes floatGhost {
     0% { transform: translateY(0px) rotate(0deg); }
@@ -574,30 +605,33 @@ body {
     border-color: var(--orange-primary);
 }
 
+/* Password Wrapper and SVG Eye Icon Styles */
 .password-wrapper {
     position: relative;
 }
 
-/* Default clean text toggle button (no emojis) */
-.toggle-password-btn {
+.eye-toggle-btn {
     position: absolute;
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--orange-primary);
-    background: rgba(255, 117, 24, 0.1);
-    border: 1px solid rgba(255, 117, 24, 0.3);
-    padding: 3px 8px;
-    border-radius: 4px;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    user-select: none;
-    transition: all 0.2s;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: color 0.2s ease;
 }
 
-.toggle-password-btn:hover {
-    background: rgba(255, 117, 24, 0.2);
+.eye-toggle-btn:hover {
+    color: var(--orange-primary);
+}
+
+.eye-icon {
+    transition: transform 0.2s ease;
 }
 
 .action-btn {
