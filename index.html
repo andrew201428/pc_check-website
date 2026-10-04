@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detect - Haunted Halloween Edition</title>
-    <link rel="icon" type="image/png" href="https://www.svgrepo.com/show/406085/jack-o-lantern.svg">
+    <!-- Website Favicon Logo Fixed -->
+    <link rel="icon" type="image/svg+xml" href="https://www.svgrepo.com/show/406085/jack-o-lantern.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Advanced Halloween Atmospheric Background -->
     <div class="halloween-scene-bg">
         <div class="spooky-moon"></div>
-        <div class="haunted-castle">🏰</div>
+        
+        <!-- Animated Skulls and Haunted House Elements -->
+        <div class="floating-skull skull-1">💀</div>
+        <div class="floating-skull skull-2">💀</div>
+        <div class="haunted-house-silhouette">🏰</div>
+        <div class="hanging-corpse-element">🦇</div>
+        
         <div class="tombstone t-1">🪦</div>
         <div class="tombstone t-2">⚰️</div>
         <div class="spooky-ghost ghost-1">👻</div>
         <div class="spooky-ghost ghost-2">👻</div>
-        <div class="spooky-bat bat-1">🦇</div>
-        <div class="spooky-bat bat-2">🦇</div>
     </div>
 
     <nav class="top-nav">
@@ -280,7 +286,13 @@
                         <label>Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="loginPassword" required placeholder="Enter password...">
-                            <span class="toggle-password-btn" onclick="togglePassword('loginPassword', this)">Show</span>
+                            <!-- Default SVG Eye Icon Button -->
+                            <button type="button" class="eye-toggle-btn" onclick="togglePassword('loginPassword', this)" title="Show/Hide Password">
+                                <svg class="eye-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path class="eye-path" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle class="eye-ball" cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <button type="submit" class="action-btn">Enter Crypt</button>
@@ -315,14 +327,26 @@
                         <label>Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="registerPassword" required placeholder="Create password...">
-                            <span class="toggle-password-btn" onclick="togglePassword('registerPassword', this)">Show</span>
+                            <!-- Default SVG Eye Icon Button -->
+                            <button type="button" class="eye-toggle-btn" onclick="togglePassword('registerPassword', this)" title="Show/Hide Password">
+                                <svg class="eye-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path class="eye-path" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle class="eye-ball" cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="input-group">
                         <label>Confirm Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="confirmPassword" required placeholder="Confirm password...">
-                            <span class="toggle-password-btn" onclick="togglePassword('confirmPassword', this)">Show</span>
+                            <!-- Default SVG Eye Icon Button -->
+                            <button type="button" class="eye-toggle-btn" onclick="togglePassword('confirmPassword', this)" title="Show/Hide Password">
+                                <svg class="eye-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path class="eye-path" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle class="eye-ball" cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <button type="submit" class="action-btn">Create Account</button>
