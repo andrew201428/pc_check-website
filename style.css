@@ -1,760 +1,149 @@
 /* Detect Version 1 Tool - Haunted Halloween New */
 /* Developer: Lowrenz Dev */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-body {
-    background-color: #0b0714;
-    color: #e2daf8;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-}
-
-/* Atmospheric Halloween Background with Dense Dead Trees, Skulls, Shrouds & Spider Webs */
-.halloween-scene-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-    background: radial-gradient(circle at 50% 20%, #1c1135 0%, #0b0714 70%);
-}
-
-.spooky-moon {
-    position: absolute;
-    top: 40px;
-    right: 15%;
-    width: 110px;
-    height: 110px;
-    background: radial-gradient(circle, #fff5d1 0%, #ffcc00 60%, #ff8c00 100%);
-    border-radius: 50%;
-    box-shadow: 0 0 50px rgba(255, 204, 0, 0.4);
-    opacity: 0.85;
-}
-
-/* Dense Dead Trees Left (Multiple overlapping twisted branches) */
-.realistic-tree-left {
-    position: absolute;
-    bottom: 0;
-    left: -40px;
-    width: 380px;
-    height: 95vh;
-    background: linear-gradient(to top, #020104, #08050e);
-    clip-path: polygon(
-        35% 100%, 65% 100%, 
-        50% 80%, 70% 65%, 90% 50%, 100% 35%, 85% 30%, 
-        75% 42%, 58% 38%, 70% 22%, 85% 12%, 65% 2%, 
-        48% 20%, 35% 8%, 20% 22%, 35% 35%, 15% 40%, 
-        5% 30%, 15% 48%, 28% 60%, 45% 72%, 30% 90%, 
-        10% 85%, 25% 100%
-    );
-    opacity: 0.95;
-}
-
-/* Dense Dead Trees Right (Multiple overlapping twisted branches) */
-.realistic-tree-right {
-    position: absolute;
-    bottom: 0;
-    right: -40px;
-    width: 400px;
-    height: 100vh;
-    background: linear-gradient(to top, #020104, #08050e);
-    clip-path: polygon(
-        40% 100%, 70% 100%, 
-        55% 82%, 75% 68%, 95% 52%, 105% 38%, 88% 32%, 
-        80% 45%, 60% 35%, 75% 18%, 90% 5%, 70% 0%, 
-        52% 18%, 38% 5%, 22% 20%, 38% 32%, 18% 38%, 
-        8% 28%, 22% 50%, 35% 62%, 52% 75%, 35% 92%, 
-        15% 88%, 28% 100%
-    );
-    opacity: 0.95;
-}
-
-/* Skulls placed on trees */
-.spooky-skull {
-    position: absolute;
-    font-size: 22px;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
-    opacity: 0.85;
-}
-.skull-left-1 { top: 35%; left: 35%; transform: rotate(-15deg); }
-.skull-left-2 { top: 52%; left: 25%; transform: rotate(20deg); }
-.skull-right-1 { top: 38%; right: 40%; transform: rotate(15deg); }
-.skull-right-2 { top: 60%; right: 28%; transform: rotate(-25deg); }
-
-/* Spider Web Designs in Corners (Top, Bottom, Left, Right) */
-.spider-web {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    pointer-events: none;
-    opacity: 0.25;
-    background-image: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.8) 0, transparent 70%),
-                      conic-gradient(from 0deg at 0 0, rgba(255, 255, 255, 0.4) 0deg, transparent 20deg, rgba(255, 255, 255, 0.4) 40deg, transparent 90deg);
-    z-index: 1;
-}
-
-.web-top-left { top: 0; left: 0; transform: rotate(0deg); }
-.web-top-right { top: 0; right: 0; transform: rotate(90deg); }
-.web-bottom-left { bottom: 0; left: 0; transform: rotate(270deg); }
-.web-bottom-right { bottom: 0; right: 0; transform: rotate(180deg); }
-
-/* Tattered ghostly shrouds hanging on branches */
-.tattered-shroud {
-    position: absolute;
-    background: rgba(180, 170, 200, 0.12);
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    filter: blur(0.5px);
-    animation: shroudSway 6s infinite ease-in-out;
-}
-
-.shroud-left {
-    top: 45%;
-    left: 45%;
-    width: 35px;
-    height: 90px;
-    clip-path: polygon(0 0, 100% 10%, 80% 90%, 95% 100%, 40% 85%, 15% 95%, 20% 70%);
-}
-
-.shroud-right {
-    top: 48%;
-    right: 42%;
-    width: 40px;
-    height: 110px;
-    clip-path: polygon(10% 0, 90% 5%, 100% 85%, 75% 100%, 50% 90%, 20% 95%, 0 75%);
-    animation-delay: 2s;
-}
-
-@keyframes shroudSway {
-    0%, 100% { transform: rotate(0deg) skewX(0deg); }
-    50% { transform: rotate(8deg) skewX(-5deg); }
-}
-
-/* Flying Bats Animation */
-.flying-bat {
-    position: absolute;
-    font-size: 20px;
-    color: #2b1f45;
-    animation: batFlight 12s infinite linear;
-    opacity: 0.7;
-}
-
-.bat-1 { top: 15%; left: -10%; animation-duration: 14s; animation-delay: 0s; }
-.bat-2 { top: 25%; left: -10%; animation-duration: 10s; animation-delay: 4s; font-size: 15px; }
-.bat-3 { top: 10%; left: -10%; animation-duration: 16s; animation-delay: 7s; font-size: 25px; }
-
-@keyframes batFlight {
-    0% { transform: translate(0, 0) scaleX(1); }
-    25% { transform: translate(30vw, -30px) scaleX(-1); }
-    50% { transform: translate(60vw, 20px) scaleX(1); }
-    75% { transform: translate(90vw, -20px) scaleX(-1); }
-    100% { transform: translate(110vw, 0) scaleX(1); }
-}
-
-/* Top Navigation */
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 5%;
-    background: rgba(18, 12, 32, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 70, 70, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    font-size: 18px;
-    color: #fff;
-}
-
-.logo-svg {
-    filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.8));
-}
-
-.top-nav-links {
-    display: flex;
-    gap: 25px;
-}
-
-.top-nav-links a {
-    color: #bfaee0;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.top-nav-links a:hover {
-    color: #ff4646;
-}
-
-.nav-auth-buttons {
-    display: flex;
-    gap: 12px;
-}
-
-.nav-btn {
-    background: transparent;
-    border: 1px solid rgba(138, 122, 171, 0.4);
-    color: #fff;
-    padding: 7px 16px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.nav-btn:hover {
-    border-color: #ff4646;
-    color: #ff4646;
-}
-
-.nav-btn.register {
-    background: #ff4646;
-    border-color: #ff4646;
-    color: #fff;
-}
-
-.nav-btn.register:hover {
-    background: #e03535;
-    box-shadow: 0 0 12px rgba(255, 70, 70, 0.5);
-}
-
-/* Dashboard Container */
-.dashboard-container {
-    max-width: 1280px;
-    margin: 40px auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-}
-
-.dashboard-hero {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.dashboard-hero h1 {
-    font-size: 38px;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.blood-glow-text {
-    color: #ff4646;
-    text-shadow: 0 0 15px rgba(255, 70, 70, 0.5);
-}
-
-.dashboard-hero p {
-    color: #a393c9;
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.creator-tag {
-    display: inline-block;
-    background: rgba(255, 70, 70, 0.15);
-    color: #ff7676;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    border: 1px solid rgba(255, 70, 70, 0.3);
-}
-
-/* Guide Banner */
-.guide-banner {
-    background: linear-gradient(135deg, rgba(30, 20, 55, 0.9), rgba(18, 12, 32, 0.9));
-    border: 1px solid rgba(255, 70, 70, 0.3);
-    border-radius: 16px;
-    padding: 25px;
-    margin-bottom: 30px;
-    display: flex;
-    gap: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.guide-icon {
-    font-size: 36px;
-}
-
-.guide-content h2 {
-    color: #fff;
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.guide-content p {
-    color: #bfaee0;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.guide-content ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.guide-content li {
-    font-size: 13px;
-    color: #d3c7ef;
-}
-
-/* All-In-One Banner */
-.all-in-one-banner {
-    background: linear-gradient(135deg, #2b1424 0%, #150a1f 100%);
-    border: 1px solid #ff4646;
-    border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 40px;
-    text-align: center;
-    box-shadow: 0 0 30px rgba(255, 70, 70, 0.2);
-}
-
-.featured-badge {
-    background: #ff4646;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.all-in-one-banner h2 {
-    font-size: 24px;
-    color: #fff;
-    margin: 15px 0 8px;
-}
-
-.all-in-one-banner p {
-    color: #c4b8db;
-    font-size: 14px;
-    max-width: 700px;
-    margin: 0 auto 20px;
-}
-
-.aio-link-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(11, 7, 20, 0.8);
-    border: 1px solid rgba(138, 122, 171, 0.3);
-    padding: 10px 15px;
-    border-radius: 10px;
-    max-width: 650px;
-    margin: 0 auto 15px;
-}
-
-.aio-url {
-    font-size: 13px;
-    color: #a393c9;
-    word-break: break-all;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.copy-link-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 5px;
-    transition: transform 0.2s ease;
-}
-
-.copy-link-btn:hover {
-    transform: scale(1.15);
-}
-
-.download-all-btn {
-    background: #ff4646;
-    color: #fff;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 15px rgba(255, 70, 70, 0.4);
-}
-
-.download-all-btn:hover {
-    background: #e03535;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 70, 70, 0.6);
-}
-
-/* Tools Grid */
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: 25px;
-}
-
-.tool-card {
-    background: rgba(20, 13, 35, 0.85);
-    border: 1px solid rgba(138, 122, 171, 0.2);
-    border-radius: 16px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.tool-card:hover {
-    border-color: rgba(255, 70, 70, 0.5);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(255, 70, 70, 0.15);
-}
-
-.tool-card.featured-card {
-    border-color: rgba(255, 70, 70, 0.4);
-    background: linear-gradient(145deg, rgba(28, 16, 42, 0.95), rgba(16, 10, 28, 0.95));
-}
-
-.tool-card h3 {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 8px;
-}
-
-.tool-card p {
-    font-size: 13px;
-    color: #a393c9;
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-
-.mechanism-box {
-    background: rgba(11, 7, 20, 0.6);
-    border-left: 3px solid #ff4646;
-    padding: 8px 12px;
-    font-size: 12px;
-    color: #c4b8db;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 15px;
-}
-
-/* Tool Live Search */
-.tool-search-container input {
-    width: 100%;
-    background: rgba(11, 7, 20, 0.9);
-    border: 1px solid rgba(138, 122, 171, 0.3);
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 12px;
-    outline: none;
-    margin-bottom: 10px;
-    transition: border-color 0.2s ease;
-}
-
-.tool-search-container input:focus {
-    border-color: #ff4646;
-}
-
-.tool-search-list {
-    background: rgba(11, 7, 20, 0.5);
-    border: 1px solid rgba(138, 122, 171, 0.15);
-    border-radius: 8px;
-    max-height: 100px;
-    overflow-y: auto;
-    margin-bottom: 20px;
-    padding: 6px;
-}
-
-.search-item {
-    font-size: 11px;
-    color: #bfaee0;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-family: monospace;
-}
-
-.search-item:hover {
-    background: rgba(255, 70, 70, 0.15);
-    color: #ff7676;
-}
-
-.download-btn {
-    background: rgba(255, 70, 70, 0.1);
-    color: #ff7676;
-    border: 1px solid rgba(255, 70, 70, 0.3);
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    width: 100%;
-}
-
-.download-btn:hover {
-    background: #ff4646;
-    color: #fff;
-    box-shadow: 0 0 12px rgba(255, 70, 70, 0.4);
-}
-
-/* Footer */
-.site-footer {
-    text-align: center;
-    padding: 30px 20px;
-    border-top: 1px solid rgba(138, 122, 171, 0.15);
-    color: #7b6a9e;
-    font-size: 13px;
-    margin-top: 60px;
-    background: rgba(11, 7, 20, 0.9);
-}
-
-/* Modals */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(7, 4, 15, 0.85);
-    backdrop-filter: blur(8px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.haunted-modal {
-    background: linear-gradient(135deg, #1c1135 0%, #0e071a 100%);
-    border: 1px solid rgba(255, 70, 70, 0.4);
-    border-radius: 16px;
-    width: 100%;
-    max-width: 420px;
-    padding: 30px;
-    position: relative;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    color: #a393c9;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.close-modal:hover {
-    color: #ff4646;
-}
-
-.input-group {
-    margin-bottom: 15px;
-}
-
-.input-group label {
-    display: block;
-    font-size: 12px;
-    color: #c4b8db;
-    margin-bottom: 6px;
-    font-weight: 500;
-}
-
-.input-group input {
-    width: 100%;
-    background: rgba(11, 7, 20, 0.9);
-    border: 1px solid rgba(138, 122, 171, 0.3);
-    padding: 10px 14px;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 13px;
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-
-.input-group input:focus {
-    border-color: #ff4646;
-}
-
-.password-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.password-wrapper input {
-    padding-right: 40px;
-}
-
-.eye-toggle-btn {
-    position: absolute;
-    right: 10px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #8a7aab;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    transition: color 0.2s ease;
-}
-
-.eye-toggle-btn:hover {
-    color: #ff4646;
-}
-
-.action-btn {
-    width: 100%;
-    background: #ff4646;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background 0.2s ease;
-}
-
-.action-btn:hover {
-    background: #e03535;
-    box-shadow: 0 0 15px rgba(255, 70, 70, 0.5);
-}
-
-.social-auth-separator {
-    text-align: center;
-    font-size: 11px;
-    color: #7b6a9e;
-    margin: 20px 0 12px;
-    position: relative;
-}
-
-.social-auth-separator::before,
-.social-auth-separator::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 28%;
-    height: 1px;
-    background: rgba(138, 122, 171, 0.2);
-}
-
-.social-auth-separator::before { left: 0; }
-.social-auth-separator::after { right: 0; }
-
-.social-auth-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.social-btn {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(138, 122, 171, 0.3);
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.2s ease;
-}
-
-.social-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
-}
-
-.social-logo {
-    width: 16px;
-    height: 16px;
-}
-
-/* Spooky Toast Notification */
-.spooky-toast {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #1c1135;
-    border: 1px solid #ff4646;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 5px 25px rgba(255, 70, 70, 0.4);
-    z-index: 2000;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.show-toast {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Media Query */
-@media (max-width: 768px) {
-    .top-nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+// Function to filter tool data dynamically inside each card search bar
+function filterToolData(inputElement, resultsListId) {
+    let filterValue = inputElement.value.toLowerCase();
+    let resultsList = document.getElementById(resultsListId);
+    let items = resultsList.getElementsByClassName('search-item');
+
+    for (let i = 0; i < items.length; i++) {
+        let textValue = items[i].textContent || items[i].innerText;
+        if (textValue.toLowerCase().indexOf(filterValue) > -1) {
+            items[i].style.display = "";
+        } else {
+            items[i].style.display = "none";
+        }
     }
-    .top-nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+}
+
+// Function to handle simulated file downloads and show spooky notification
+function startDownload(fileName) {
+    showSpookyToast(`Successfully initiated download for: ${fileName}`);
+}
+
+// Function to copy direct links to clipboard
+function copyLink(linkText) {
+    navigator.clipboard.writeText(linkText).then(() => {
+        showSpookyToast("Link copied to clipboard successfully!");
+    }).catch(err => {
+        console.error('Failed to copy link: ', err);
+    });
+}
+
+// Authentication Modal Control Functions
+function openAuthModal(mode) {
+    let modal = document.getElementById('authModal');
+    let loginContainer = document.getElementById('loginFormContainer');
+    let registerContainer = document.getElementById('registerFormContainer');
+
+    modal.style.display = 'flex';
+
+    if (mode === 'login') {
+        loginContainer.style.display = 'block';
+        registerContainer.style.display = 'none';
+    } else if (mode === 'register') {
+        loginContainer.style.display = 'none';
+        registerContainer.style.display = 'block';
     }
-    .dashboard-hero h1 {
-        font-size: 28px;
+}
+
+function closeAuthModal() {
+    let modal = document.getElementById('authModal');
+    modal.style.display = 'none';
+}
+
+// Toggle Password Visibility Function
+function togglePassword(fieldId, buttonElement) {
+    let passwordInput = document.getElementById(fieldId);
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        buttonElement.style.color = '#ff4646';
+    } else {
+        passwordInput.type = 'password';
+        buttonElement.style.color = '#8a7aab';
     }
-    .tools-grid {
-        grid-template-columns: 1fr;
+}
+
+// Footer Info Modal Functions
+function openFooterModal(type) {
+    let modal = document.getElementById('footerModal');
+    let titleElement = document.getElementById('footerModalTitle');
+    let bodyElement = document.getElementById('footerModalBody');
+
+    modal.style.display = 'flex';
+
+    if (type === 'freeTools') {
+        titleElement.textContent = 'Free Forensic Tools Policy';
+        bodyElement.textContent = 'All utility modules provided within Detect Version 1 are completely free for local system auditing, diagnostic checks, and educational research purposes.';
+    } else if (type === 'changelogs') {
+        titleElement.textContent = 'System Changelogs - v1.0.0';
+        bodyElement.textContent = '- Released Haunted Halloween Edition UI.\n- Integrated 9 targeted forensic analysis modules.\n- Added real-time log search filtering and instant bundle downloads.';
+    } else if (type === 'privacy') {
+        titleElement.textContent = 'Privacy Policy';
+        bodyElement.textContent = 'Detect operates strictly on a local client-side execution model. No telemetry data, system logs, or personal artifacts are ever transmitted or stored externally.';
+    } else if (type === 'tos') {
+        titleElement.textContent = 'Terms of Service';
+        bodyElement.textContent = 'By utilizing Detect Version 1 utilities, you agree to use these diagnostic modules exclusively on authorized machines and personal hardware environments.';
     }
-    .guide-banner {
-        flex-direction: column;
-        gap: 10px;
+}
+
+function closeFooterModal() {
+    let modal = document.getElementById('footerModal');
+    modal.style.display = 'none';
+}
+
+// Simulated Form Handling
+function handleLogin(event) {
+    event.preventDefault();
+    closeAuthModal();
+    showSpookyToast("Welcome back to the coven, Checker!");
+}
+
+function handleRegister(event) {
+    event.preventDefault();
+    closeAuthModal();
+    showSpookyToast("Coven membership registered successfully!");
+}
+
+// Social Authentication Handler
+function socialAuth(provider) {
+    closeAuthModal();
+    showSpookyToast(`Authenticating securely via ${provider}...`);
+}
+
+// Spooky Toast Notification System
+function showSpookyToast(message) {
+    let existingToast = document.querySelector('.spooky-toast');
+    if (existingToast) {
+        existingToast.remove();
     }
-    .realistic-tree-left, .realistic-tree-right {
-        width: 180px;
-        opacity: 0.6;
+
+    let toast = document.createElement('div');
+    toast.className = 'spooky-toast';
+    toast.innerHTML = `<span>🎃</span> <span>${message}</span>`;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add('show-toast');
+    }, 100);
+
+    setTimeout(() => {
+        toast.classList.remove('show-toast');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 3500);
+}
+
+// Close modals when clicking outside content area
+window.onclick = function(event) {
+    let authModal = document.getElementById('authModal');
+    let footerModal = document.getElementById('footerModal');
+    if (event.target === authModal) {
+        closeAuthModal();
+    }
+    if (event.target === footerModal) {
+        closeFooterModal();
     }
 }
