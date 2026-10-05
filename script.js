@@ -1,11 +1,11 @@
-// Detect Version 1 Tool - Haunted Halloween Edition
-// Developer: Lowrenz Dev
+/* Detect Version 1 Tool - Haunted Halloween New */
+/* Developer: Lowrenz Dev */
 
-// Live Search Filter for Tool Cards
-function filterToolData(inputElement, listId) {
-    const filterValue = inputElement.value.toLowerCase();
-    const listContainer = document.getElementById(listId);
-    const items = listContainer.getElementsByClassName('search-item');
+// Function to filter tool data dynamically inside each card search bar
+function filterToolData(inputElement, resultsListId) {
+    let filterValue = inputElement.value.toLowerCase();
+    let resultsList = document.getElementById(resultsListId);
+    let items = resultsList.getElementsByClassName('search-item');
 
     for (let i = 0; i < items.length; i++) {
         let textValue = items[i].textContent || items[i].innerText;
@@ -17,39 +17,111 @@ function filterToolData(inputElement, listId) {
     }
 }
 
-// Copy Direct Download Link to Clipboard
-function copyLink(url) {
-    navigator.clipboard.writeText(url).then(() => {
-        showSpookyNotification("Link successfully copied to clipboard!");
+// Function to handle simulated file downloads and show spooky notification
+function startDownload(fileName) {
+    showSpookyToast(`Successfully initiated download for: ${fileName}`);
+}
+
+// Function to copy direct links to clipboard
+function copyLink(linkText) {
+    navigator.clipboard.writeText(linkText).then(() => {
+        showSpookyToast("Link copied to clipboard successfully!");
     }).catch(err => {
         console.error('Failed to copy link: ', err);
     });
 }
 
-// Simulated Download Handler with Spooky Notification
-function startDownload(fileName, toolName) {
-    showSpookyNotification(`Summoning download for ${toolName}...`);
-    
-    setTimeout(() => {
-        const dummyElement = document.createElement('a');
-        dummyElement.href = '#';
-        dummyElement.setAttribute('download', fileName);
-        document.body.appendChild(dummyElement);
-        document.body.removeChild(dummyElement);
-        showSpookyNotification(`${toolName} successfully downloaded!`);
-    }, 1500);
+// Authentication Modal Control Functions
+function openAuthModal(mode) {
+    let modal = document.getElementById('authModal');
+    let loginContainer = document.getElementById('loginFormContainer');
+    let registerContainer = document.getElementById('registerFormContainer');
+
+    modal.style.display = 'flex';
+
+    if (mode === 'login') {
+        loginContainer.style.display = 'block';
+        registerContainer.style.display = 'none';
+    } else if (mode === 'register') {
+        loginContainer.style.display = 'none';
+        registerContainer.style.display = 'block';
+    }
 }
 
-// Custom Spooky Toast Notification
-function showSpookyNotification(message) {
-    const existingToast = document.querySelector('.spooky-toast');
+function closeAuthModal() {
+    let modal = document.getElementById('authModal');
+    modal.style.display = 'none';
+}
+
+// Toggle Password Visibility Function
+function togglePassword(fieldId, buttonElement) {
+    let passwordInput = document.getElementById(fieldId);
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        buttonElement.style.color = '#ff4646';
+    } else {
+        passwordInput.type = 'password';
+        buttonElement.style.color = '#8a7aab';
+    }
+}
+
+// Footer Info Modal Functions
+function openFooterModal(type) {
+    let modal = document.getElementById('footerModal');
+    let titleElement = document.getElementById('footerModalTitle');
+    let bodyElement = document.getElementById('footerModalBody');
+
+    modal.style.display = 'flex';
+
+    if (type === 'freeTools') {
+        titleElement.textContent = 'Free Forensic Tools Policy';
+        bodyElement.textContent = 'All utility modules provided within Detect Version 1 are completely free for local system auditing, diagnostic checks, and educational research purposes.';
+    } else if (type === 'changelogs') {
+        titleElement.textContent = 'System Changelogs - v1.0.0';
+        bodyElement.textContent = '- Released Haunted Halloween Edition UI.\n- Integrated 9 targeted forensic analysis modules.\n- Added real-time log search filtering and instant bundle downloads.';
+    } else if (type === 'privacy') {
+        titleElement.textContent = 'Privacy Policy';
+        bodyElement.textContent = 'Detect operates strictly on a local client-side execution model. No telemetry data, system logs, or personal artifacts are ever transmitted or stored externally.';
+    } else if (type === 'tos') {
+        titleElement.textContent = 'Terms of Service';
+        bodyElement.textContent = 'By utilizing Detect Version 1 utilities, you agree to use these diagnostic modules exclusively on authorized machines and personal hardware environments.';
+    }
+}
+
+function closeFooterModal() {
+    let modal = document.getElementById('footerModal');
+    modal.style.display = 'none';
+}
+
+// Simulated Form Handling
+function handleLogin(event) {
+    event.preventDefault();
+    closeAuthModal();
+    showSpookyToast("Welcome back to the coven, Checker!");
+}
+
+function handleRegister(event) {
+    event.preventDefault();
+    closeAuthModal();
+    showSpookyToast("Coven membership registered successfully!");
+}
+
+// Social Authentication Handler
+function socialAuth(provider) {
+    closeAuthModal();
+    showSpookyToast(`Authenticating securely via ${provider}...`);
+}
+
+// Spooky Toast Notification System
+function showSpookyToast(message) {
+    let existingToast = document.querySelector('.spooky-toast');
     if (existingToast) {
         existingToast.remove();
     }
 
-    const toast = document.createElement('div');
+    let toast = document.createElement('div');
     toast.className = 'spooky-toast';
-    toast.innerHTML = `🦇 <span>${message}</span>`;
+    toast.innerHTML = `<span>🎃</span> <span>${message}</span>`;
     document.body.appendChild(toast);
 
     setTimeout(() => {
@@ -58,101 +130,16 @@ function showSpookyNotification(message) {
 
     setTimeout(() => {
         toast.classList.remove('show-toast');
-        setTimeout(() => toast.remove(), 400);
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
     }, 3500);
 }
 
-// Authentication Modal Controls (Fixed Sign In / Register switching)
-function openAuthModal(mode) {
-    const modal = document.getElementById('authModal');
-    const loginContainer = document.getElementById('loginFormContainer');
-    const registerContainer = document.getElementById('registerFormContainer');
-
-    if (mode === 'login') {
-        loginContainer.style.display = 'block';
-        registerContainer.style.display = 'none';
-    } else {
-        loginContainer.style.display = 'none';
-        registerContainer.style.display = 'block';
-    }
-
-    modal.style.display = 'flex';
-}
-
-function closeAuthModal() {
-    document.getElementById('authModal').style.display = 'none';
-}
-
-// Password Eye Toggle
-function togglePassword(fieldId, btnElement) {
-    const passwordInput = document.getElementById(fieldId);
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        btnElement.style.color = '#ff4646';
-    } else {
-        passwordInput.type = 'password';
-        btnElement.style.color = '#8a7aab';
-    }
-}
-
-// Handle Form Submissions
-function handleLogin(event) {
-    event.preventDefault();
-    closeAuthModal();
-    showSpookyNotification("Welcome back to the coven, operative!");
-}
-
-function handleRegister(event) {
-    event.preventDefault();
-    closeAuthModal();
-    showSpookyNotification("Coven membership registered successfully!");
-}
-
-function socialAuth(provider) {
-    closeAuthModal();
-    showSpookyNotification(`Connecting securely via ${provider}...`);
-}
-
-// Footer Modal Data & Controls
-const footerData = {
-    freeTools: {
-        title: "Free Forensic Tools",
-        body: "All tools included in Detect Version 1 are 100% free for community auditing, PC checking, and educational diagnostics. Built with precision and optimized for local Windows artifact inspection."
-    },
-    changelogs: {
-        title: "Changelogs - Version 1.0.0",
-        body: "&bull; Released Haunted Halloween Edition with atmospheric animations.<br>&bull; Added live filter search bars inside all 9 forensic utility cards.<br>&bull; Upgraded All-In-One bundle repository download links.<br>&bull; Enhanced secure password toggles and modal layouts."
-    },
-    privacy: {
-        title: "Privacy Policy",
-        body: "Detect Platform respects your privacy. All scans, searches, and forensic auditing tools operate strictly local on your machine. No telemetry data or system logs are ever transmitted externally."
-    },
-    tos: {
-        title: "Terms of Service",
-        body: "By downloading and utilizing Detect Version 1 tools, you agree to use them solely for authorized system diagnostics, personal device auditing, and legitimate community PC verification."
-    }
-};
-
-function openFooterModal(type) {
-    const modal = document.getElementById('footerModal');
-    const titleElem = document.getElementById('footerModalTitle');
-    const bodyElem = document.getElementById('footerModalBody');
-
-    if (footerData[type]) {
-        titleElem.innerHTML = footerData[type].title;
-        bodyElem.innerHTML = footerData[type].body;
-        modal.style.display = 'flex';
-    }
-}
-
-function closeFooterModal() {
-    document.getElementById('footerModal').style.display = 'none';
-}
-
-// Close Modals on Outside Click
+// Close modals when clicking outside content area
 window.onclick = function(event) {
-    const authModal = document.getElementById('authModal');
-    const footerModal = document.getElementById('footerModal');
+    let authModal = document.getElementById('authModal');
+    let footerModal = document.getElementById('footerModal');
     if (event.target === authModal) {
         closeAuthModal();
     }
