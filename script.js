@@ -1,4 +1,4 @@
-/* Detect Version 1 Tool - Haunted Halloween New */
+/* Detect Version 1 Tool - Haunted Halloween Edition */
 /* Developer: Lowrenz Dev */
 
 // Function to filter tool data dynamically inside each card search bar
