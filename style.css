@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Atmospheric Halloween Background with Left & Right Trees */
+/* Atmospheric Halloween Background with Realistic Black Dead Trees, Skulls & Ghostly Shrouds */
 .halloween-scene-bg {
     position: fixed;
     top: 0;
@@ -43,28 +43,88 @@ body {
     opacity: 0.85;
 }
 
-/* Dead Tree Left */
-.dead-tree-left {
+/* Realistic Dead Tree Left (Pitch Black with intricate twisted branches) */
+.realistic-tree-left {
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 220px;
-    height: 70vh;
-    background: linear-gradient(to top, #06040a, #130b21);
-    clip-path: polygon(40% 100%, 60% 100%, 55% 60%, 80% 40%, 65% 35%, 90% 15%, 75% 10%, 55% 30%, 45% 20%, 30% 35%, 48% 50%, 35% 70%);
-    opacity: 0.75;
+    left: -20px;
+    width: 280px;
+    height: 85vh;
+    background: linear-gradient(to top, #020104, #08050e);
+    clip-path: polygon(
+        40% 100%, 60% 100%, 
+        52% 75%, 65% 60%, 
+        85% 45%, 98% 30%, 82% 28%, 
+        75% 40%, 60% 35%, 
+        70% 20%, 80% 10%, 65% 5%, 
+        50% 22%, 40% 12%, 25% 25%, 
+        38% 38%, 20% 42%, 8% 35%, 
+        18% 50%, 30% 62%, 48% 70%, 35% 85%
+    );
+    opacity: 0.9;
 }
 
-/* Dead Tree Right */
-.dead-tree-right {
+/* Realistic Dead Tree Right (Pitch Black with intricate twisted branches) */
+.realistic-tree-right {
     position: absolute;
     bottom: 0;
-    right: 0;
-    width: 240px;
-    height: 75vh;
-    background: linear-gradient(to top, #06040a, #130b21);
-    clip-path: polygon(45% 100%, 65% 100%, 58% 65%, 85% 45%, 70% 38%, 95% 18%, 80% 12%, 60% 32%, 50% 22%, 35% 38%, 52% 52%, 40% 72%);
-    opacity: 0.75;
+    right: -20px;
+    width: 300px;
+    height: 90vh;
+    background: linear-gradient(to top, #020104, #08050e);
+    clip-path: polygon(
+        45% 100%, 65% 100%, 
+        58% 78%, 72% 62%, 
+        90% 48%, 100% 32%, 85% 25%, 
+        78% 38%, 62% 32%, 
+        72% 18%, 82% 8%, 68% 2%, 
+        52% 20%, 42% 10%, 28% 22%, 
+        40% 35%, 22% 40%, 10% 32%, 
+        20% 48%, 32% 60%, 50% 68%, 38% 82%
+    );
+    opacity: 0.9;
+}
+
+/* Skulls placed on trees */
+.spooky-skull {
+    position: absolute;
+    font-size: 22px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+    opacity: 0.85;
+}
+.skull-left-1 { top: 38%; left: 45%; transform: rotate(-15deg); }
+.skull-left-2 { top: 55%; left: 32%; transform: rotate(20deg); }
+.skull-right-1 { top: 42%; right: 48%; transform: rotate(15deg); }
+
+/* Tattered ghostly shrouds hanging on branches */
+.tattered-shroud {
+    position: absolute;
+    background: rgba(180, 170, 200, 0.12);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    filter: blur(0.5px);
+    animation: shroudSway 6s infinite ease-in-out;
+}
+
+.shroud-left {
+    top: 45%;
+    left: 65%;
+    width: 35px;
+    height: 90px;
+    clip-path: polygon(0 0, 100% 10%, 80% 90%, 95% 100%, 40% 85%, 15% 95%, 20% 70%);
+}
+
+.shroud-right {
+    top: 50%;
+    right: 50%;
+    width: 40px;
+    height: 110px;
+    clip-path: polygon(10% 0, 90% 5%, 100% 85%, 75% 100%, 50% 90%, 20% 95%, 0 75%);
+    animation-delay: 2s;
+}
+
+@keyframes shroudSway {
+    0%, 100% { transform: rotate(0deg) skewX(0deg); }
+    50% { transform: rotate(8deg) skewX(-5deg); }
 }
 
 /* Flying Bats Animation */
@@ -112,8 +172,7 @@ body {
 }
 
 .logo-svg {
-    fill: #ff4646;
-    filter: drop-shadow(0 0 6px rgba(255, 70, 70, 0.8));
+    filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.8));
 }
 
 .top-nav-links {
@@ -678,8 +737,8 @@ body {
         flex-direction: column;
         gap: 10px;
     }
-    .dead-tree-left, .dead-tree-right {
-        width: 120px;
-        opacity: 0.5;
+    .realistic-tree-left, .realistic-tree-right {
+        width: 150px;
+        opacity: 0.6;
     }
 }
