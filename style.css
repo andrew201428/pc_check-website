@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Atmospheric Halloween Background with Realistic Black Dead Trees, Skulls & Ghostly Shrouds */
+/* Atmospheric Halloween Background with Dense Dead Trees, Skulls, Shrouds & Spider Webs */
 .halloween-scene-bg {
     position: fixed;
     top: 0;
@@ -43,46 +43,42 @@ body {
     opacity: 0.85;
 }
 
-/* Realistic Dead Tree Left (Pitch Black with intricate twisted branches) */
+/* Dense Dead Trees Left (Multiple overlapping twisted branches) */
 .realistic-tree-left {
     position: absolute;
     bottom: 0;
-    left: -20px;
-    width: 280px;
-    height: 85vh;
+    left: -40px;
+    width: 380px;
+    height: 95vh;
     background: linear-gradient(to top, #020104, #08050e);
     clip-path: polygon(
-        40% 100%, 60% 100%, 
-        52% 75%, 65% 60%, 
-        85% 45%, 98% 30%, 82% 28%, 
-        75% 40%, 60% 35%, 
-        70% 20%, 80% 10%, 65% 5%, 
-        50% 22%, 40% 12%, 25% 25%, 
-        38% 38%, 20% 42%, 8% 35%, 
-        18% 50%, 30% 62%, 48% 70%, 35% 85%
+        35% 100%, 65% 100%, 
+        50% 80%, 70% 65%, 90% 50%, 100% 35%, 85% 30%, 
+        75% 42%, 58% 38%, 70% 22%, 85% 12%, 65% 2%, 
+        48% 20%, 35% 8%, 20% 22%, 35% 35%, 15% 40%, 
+        5% 30%, 15% 48%, 28% 60%, 45% 72%, 30% 90%, 
+        10% 85%, 25% 100%
     );
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
-/* Realistic Dead Tree Right (Pitch Black with intricate twisted branches) */
+/* Dense Dead Trees Right (Multiple overlapping twisted branches) */
 .realistic-tree-right {
     position: absolute;
     bottom: 0;
-    right: -20px;
-    width: 300px;
-    height: 90vh;
+    right: -40px;
+    width: 400px;
+    height: 100vh;
     background: linear-gradient(to top, #020104, #08050e);
     clip-path: polygon(
-        45% 100%, 65% 100%, 
-        58% 78%, 72% 62%, 
-        90% 48%, 100% 32%, 85% 25%, 
-        78% 38%, 62% 32%, 
-        72% 18%, 82% 8%, 68% 2%, 
-        52% 20%, 42% 10%, 28% 22%, 
-        40% 35%, 22% 40%, 10% 32%, 
-        20% 48%, 32% 60%, 50% 68%, 38% 82%
+        40% 100%, 70% 100%, 
+        55% 82%, 75% 68%, 95% 52%, 105% 38%, 88% 32%, 
+        80% 45%, 60% 35%, 75% 18%, 90% 5%, 70% 0%, 
+        52% 18%, 38% 5%, 22% 20%, 38% 32%, 18% 38%, 
+        8% 28%, 22% 50%, 35% 62%, 52% 75%, 35% 92%, 
+        15% 88%, 28% 100%
     );
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 /* Skulls placed on trees */
@@ -92,9 +88,27 @@ body {
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
     opacity: 0.85;
 }
-.skull-left-1 { top: 38%; left: 45%; transform: rotate(-15deg); }
-.skull-left-2 { top: 55%; left: 32%; transform: rotate(20deg); }
-.skull-right-1 { top: 42%; right: 48%; transform: rotate(15deg); }
+.skull-left-1 { top: 35%; left: 35%; transform: rotate(-15deg); }
+.skull-left-2 { top: 52%; left: 25%; transform: rotate(20deg); }
+.skull-right-1 { top: 38%; right: 40%; transform: rotate(15deg); }
+.skull-right-2 { top: 60%; right: 28%; transform: rotate(-25deg); }
+
+/* Spider Web Designs in Corners (Top, Bottom, Left, Right) */
+.spider-web {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    pointer-events: none;
+    opacity: 0.25;
+    background-image: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.8) 0, transparent 70%),
+                      conic-gradient(from 0deg at 0 0, rgba(255, 255, 255, 0.4) 0deg, transparent 20deg, rgba(255, 255, 255, 0.4) 40deg, transparent 90deg);
+    z-index: 1;
+}
+
+.web-top-left { top: 0; left: 0; transform: rotate(0deg); }
+.web-top-right { top: 0; right: 0; transform: rotate(90deg); }
+.web-bottom-left { bottom: 0; left: 0; transform: rotate(270deg); }
+.web-bottom-right { bottom: 0; right: 0; transform: rotate(180deg); }
 
 /* Tattered ghostly shrouds hanging on branches */
 .tattered-shroud {
@@ -107,15 +121,15 @@ body {
 
 .shroud-left {
     top: 45%;
-    left: 65%;
+    left: 45%;
     width: 35px;
     height: 90px;
     clip-path: polygon(0 0, 100% 10%, 80% 90%, 95% 100%, 40% 85%, 15% 95%, 20% 70%);
 }
 
 .shroud-right {
-    top: 50%;
-    right: 50%;
+    top: 48%;
+    right: 42%;
     width: 40px;
     height: 110px;
     clip-path: polygon(10% 0, 90% 5%, 100% 85%, 75% 100%, 50% 90%, 20% 95%, 0 75%);
@@ -230,6 +244,8 @@ body {
     max-width: 1280px;
     margin: 40px auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .dashboard-hero {
@@ -688,7 +704,7 @@ body {
     height: 16px;
 }
 
-/* Toast Notification */
+/* Spooky Toast Notification */
 .spooky-toast {
     position: fixed;
     bottom: 30px;
@@ -738,7 +754,7 @@ body {
         gap: 10px;
     }
     .realistic-tree-left, .realistic-tree-right {
-        width: 150px;
+        width: 180px;
         opacity: 0.6;
     }
 }
