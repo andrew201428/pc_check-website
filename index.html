@@ -4,370 +4,305 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detect Version 1 Tool - Halloween Style</title>
+    <!-- Logo & Favicon Links -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Atmospheric Halloween Background with Dense Dead Trees & Spider Webs -->
+    <div class="halloween-scene-bg">
+        <div class="spooky-moon"></div>
+        <div class="realistic-tree-left"></div>
+        <div class="realistic-tree-right"></div>
+        
+        <div class="spider-web web-top-left"></div>
+        <div class="spider-web web-top-right"></div>
+        <div class="spider-web web-bottom-left"></div>
+        <div class="spider-web web-bottom-right"></div>
+    </div>
+
     <!-- Top Navigation Bar -->
-    <header class="top-nav">
-        <div class="nav-brand">Detect v1.0</div>
-        <nav class="nav-links">
-            <a href="#guide">Guide</a>
-            <a href="#free-tools">Free Tools</a>
-            <a href="index.html" class="active-premium" onclick="openPremiumModal(event)">Premium Tools</a>
-            <a href="#changelogs">Changelogs</a>
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#tos">TOS</a>
-            <div class="settings-dropdown">
-                <button id="themeToggleBtn" class="settings-btn" onclick="cycleTheme()">Dark Mode</button>
-            </div>
-        </nav>
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="logo-icon">🎃</span> Detectv1.0
+        </div>
+        <div class="nav-links">
+            <a href="#" onclick="openFooterModal('freeTools')">Free Tools</a>
+            <a href="#" onclick="openPremiumModal(event)" class="active-premium">Premium Tools</a>
+            <a href="#" onclick="openFooterModal('changelogs')">Changelogs</a>
+            <a href="#" onclick="openFooterModal('privacy')">Privacy Policy</a>
+            <a href="#" onclick="openFooterModal('tos')">TOS</a>
+            <button class="settings-btn" id="themeToggleBtn" onclick="cycleTheme()">Theme Mode</button>
+        </div>
         <div class="auth-buttons">
             <button class="login-btn" onclick="openAuthModal('login')">Login</button>
             <button class="register-btn" onclick="openAuthModal('register')">Register</button>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Container -->
-    <main class="container">
-        
-        <!-- Header Section -->
+    <div class="container">
+
+        <!-- Hero Section -->
         <section class="hero-section">
             <h1>Detect Version 1 Tool</h1>
             <p class="subtitle">Welcome to the Haunted Halloween & Premium System Utilities & System Diagnostics</p>
         </section>
 
-        <!-- Dashboard Free Trial Status Banner -->
-        <section class="dashboard-trial-banner">
-            <div class="trial-info">
-                <h3>🎃 Premium Free Trial Status</h3>
-                <p id="trialStatusText">Free trial becomes available in:</p>
-                <div id="countdownTimer" class="countdown-display">10d 00h 00m 00s</div>
-            </div>
-            <button id="claimTrialDashboardBtn" class="claim-btn-disabled" disabled onclick="claimFreeTrial()">Claim Free Trial Now</button>
-        </section>
-
-        <!-- Spooky Checker's Guide -->
-        <section id="guide" class="card-section">
-            <h2>Spooky Checker's Guide</h2>
-            <p>Welcome to the Haunted PC Checker. Follow these steps to audit systems safely:</p>
-            <ol>
-                <li><strong>Explore Tools:</strong> Use the live search inside each card and filter specific artifacts instantly.</li>
-                <li><strong>Single or Bundle Download:</strong> Download individual diagnostic utilities or grab the entire suite using the All-In-One Bundle below.</li>
-                <li><strong>Local Execution:</strong> All scripts operate locally and securely as isolated binaries without transmitting sensitive telemetry externally.</li>
-            </ol>
-        </section>
-
-        <!-- All-In-One Bundle -->
-        <section id="free-tools" class="card-section bundle-card">
-            <h2>Detect Version 1 Tool - Haunted Edition</h2>
-            <p>Comprehensive all-in-one forensic and system auditing utilities in a single bundled package. Optimized for rapid performance, deep inspection, and spooky aesthetics.</p>
-            <p class="file-path">📁 Download: <code>Detect_v1_Haunted_Edition_Bundle.zip</code></p>
-            <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Search logs in Recent Cheat Prefetch Tracer..." onkeyup="filterToolData(this, 'tool1Results')">
-            </div>
-            <button class="download-btn" onclick="startDownload('Detect_v1_Haunted_Edition_Bundle.zip')">Download All (.ZIP)</button>
-        </section>
-
-        <!-- Free Tool 1: Recent Cheat Prefetch Tracer -->
+        <!-- Tool 1: Recent Cheat Prefetch Tracer -->
         <section class="card-section">
-            <h3>🦇 Recent Cheat Prefetch Tracer</h3>
-            <p class="tool-desc">Targeted forensic module specifically designed to extract and review recently executed cheat binaries from Windows prefetch and prefetch history.</p>
-            <p><strong>How it works:</strong> Parses out normal applications and highlights strictly illicit cheat executable binaries logs.</p>
-            <p class="file-path">📁 Target: <code>C:\Windows\Prefetch\*.pf</code> (Filtered: CheatExecutables, Injector_Loader, SpookyHook)</p>
+            <h3>Recent Cheat Prefetch Tracer</h3>
+            <p>Targeted forensic module specifically designed to extract prefetch records, reviewing recently executed cheat binaries.</p>
+            <div class="file-path">C:\Windows\Prefetch\CHEAT_PREFETCH_TRACER.pf</div>
             <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter prefetch logs..." onkeyup="filterToolData(this, 'prefetchResults')">
+                <input type="text" class="card-search-input" placeholder="Search prefetch artifacts..." onkeyup="filterToolData(this, 'prefetchSearchList')">
             </div>
-            <ul id="prefetchResults" class="search-item-list">
-                <li class="search-item">Run .EXE file - loader_v2.exe - C:\Users\Admin\Downloads\loader_v2.exe</li>
-                <li class="search-item">Run .EXE file - spooky_cheat_x64.exe - C:\Windows\Temp\spooky_cheat_x64.exe</li>
-                <li class="search-item">Run .EXE file - discord_injector.exe - C:\Tools\discord_injector.exe</li>
+            <ul class="search-item-list" id="prefetchSearchList">
+                <li class="search-item">pref_scan_results.log</li>
+                <li class="search-item">cheat_loader_setup.exe</li>
+                <li class="search-item">bypass_injection.exe</li>
+                <li class="search-item">loader_speedhack.exe</li>
             </ul>
-            <button class="download-btn" onclick="startDownload('RecentCheatPrefetchTracer.exe')">Download Prefetch Tracer</button>
+            <button class="download-btn" onclick="startDownload('RecentCheatPrefetchTracer.zip')">Download Prefetch Tracer</button>
         </section>
 
-        <!-- Free Tool 2: AppCrash & History Tracer -->
+        <!-- Tool 2: Delete Cheat History -->
         <section class="card-section">
-            <h3>👻 AppCrash & History Tracer</h3>
-            <p class="tool-desc">Advanced diagnostic utility to inspect system crash logs, application history, and download residuals to track residual malware remnants.</p>
-            <p><strong>How it works:</strong> Scans Windows Error Reporting (WER) logs, browser download histories, and execution timetables.</p>
-            <p class="file-path">📁 Target: <code>AppData\Local\Microsoft\Windows\WER\ReportArchive</code></p>
+            <h3>Delete Cheat History</h3>
+            <p>Specialized forensic scanner designed to search and express cleared execution/registry artifacts, file path captures in CCleaner traces, shellbags, RecentDocs, and customized MUICache/ShellBag registry records for unauthorized clearances.</p>
+            <div class="file-path">Target: AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations</div>
             <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter crash history..." onkeyup="filterToolData(this, 'crashResults')">
+                <input type="text" class="card-search-input" placeholder="Filter wiped logs..." onkeyup="filterToolData(this, 'historySearchList')">
             </div>
-            <ul id="crashResults" class="search-item-list">
-                <li class="search-item">Crash Log - cheat_client_crash.wer - Process ID: 4122</li>
-                <li class="search-item">App History - unverified_game_setup.exe - Executed & Terminated</li>
+            <ul class="search-item-list" id="historySearchList">
+                <li class="search-item">wiped_shellbag_trace.dat</li>
+                <li class="search-item">ccleaner_wipelog.txt</li>
+                <li class="search-item">mru_list_cleanup.log</li>
             </ul>
-            <button class="download-btn" onclick="startDownload('AppCrashHistoryTracer.exe')">Download Crash Tracer</button>
+            <button class="download-btn" onclick="startDownload('DeleteHistoryScanner.zip')">Download History Scanner</button>
         </section>
 
-        <!-- Free Tool 3: Delete Cheat History -->
+        <!-- Tool 3: AppData & Process / System Informer Analyzer -->
         <section class="card-section">
-            <h3>🎃 Delete Cheat History</h3>
-            <p class="tool-desc">Specialized forensic scanner designed to search and expose cleared execution histories, anti-forensic payloads (including CCleaner traces), and wiped audit trails.</p>
-            <p><strong>How it works:</strong> Parses allocated disk sectors and structural registry records to unearth cheat clearances.</p>
-            <p class="file-path">📁 Target: <code>AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations</code></p>
-            <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter wiped logs..." onkeyup="filterToolData(this, 'wipeResults')">
-            </div>
-            <ul id="wipeResults" class="search-item-list">
-                <li class="search-item">Cleared Entry - aimbot_v3_final.exe - Destination Link Wiped</li>
-                <li class="search-item">Registry Clean - RecentDocs Key Cleared at 13:42:10</li>
-            </ul>
-            <button class="download-btn" onclick="startDownload('DeleteCheatHistoryChecker.exe')">Download History Scanner</button>
+            <h3>AppData & Process / System Informer Analyzer</h3>
+            <p>Deeply scans auxiliary target execution paths within the critical system/user system templates for anomalies.</p>
+            <div class="file-path">Target: C:\Users\Admin\AppData\Local\Roaming folders employing temp/executors for suspicious processes.</div>
+            <button class="download-btn" onclick="startDownload('ProcessAnalyzer.zip')">Download Process Analyzer</button>
         </section>
 
-        <!-- Free Tool 4: AppData & Process / System Informer Analyzer -->
+        <!-- Tool 4: Deep Trace Footprints & Audit -->
         <section class="card-section">
-            <h3>🕷️️ AppData & Process / System Informer Analyzer</h3>
-            <p class="tool-desc">Deep inspection utility targeting user profile local paths and system kernel process structures for anomalies.</p>
-            <p><strong>How it works:</strong> Scans AppData Local/Roaming folders and gauges kernel process trees for suspicious processes.</p>
-            <p class="file-path">📁 Target: <code>C:\Users\Admin\AppData\Local\Temp</code></p>
+            <h3>Deep Trace Footprints & Audit</h3>
+            <p>Rifles through Windows EVTX event/audit logs, Appx package directories, malware traces, and unlisted/authorized DLLs.</p>
+            <div class="file-path">Target: C:\Windows\System32\winevt\Logs, StoreCacheData, and WOW64</div>
             <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter appdata processes..." onkeyup="filterToolData(this, 'appdataResults')">
+                <input type="text" class="card-search-input" placeholder="Search trace directories..." onkeyup="filterToolData(this, 'deepTraceSearchList')">
             </div>
-            <ul id="appdataResults" class="search-item-list">
-                <li class="search-item">Suspicious Process - background_injector.exe running in Temp</li>
-                <li class="search-item">DLL Injection Detected - overlay_hook.dll inside explorer.exe</li>
+            <ul class="search-item-list" id="deepTraceSearchList">
+                <li class="search-item">AppxPackagesManifest.xml</li>
+                <li class="search-item">SuspiciousDllHijackScanner.py</li>
+                <li class="search-item">EVTX_SecurityAuditor_Log.evtx</li>
             </ul>
-            <button class="download-btn" onclick="startDownload('AppDataProcessAnalyzer.exe')">Download Process Analyzer</button>
+            <button class="download-btn" onclick="startDownload('DeepTraceTracer.zip')">Download Deep Trace Auditor</button>
         </section>
 
-        <!-- Free Tool 5: Deep Trace Footprints & Audit -->
+        <!-- Tool 5: USB & Registry Persistence Blaster -->
         <section class="card-section">
-            <h3>💀 Deep Trace Footprints & Audit</h3>
-            <p class="tool-desc">Advanced anti-malware and artifact artifice scanner designed to uncover hidden files, malware traces, and unlisted browser URLs.</p>
-            <p><strong>How it works:</strong> Parses Master File Table (MFT), ShimCache, AmCache, and USN Journal.</p>
-            <p class="file-path">📁 Target: <code>C:\Windows\AppCompat\Programs\Amcache.hve</code></p>
-            <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter deep footprints..." onkeyup="filterToolData(this, 'footprintResults')">
-            </div>
-            <ul id="footprintResults" class="search-item-list">
-                <li class="search-item">AmCache Hit - loader_v2.exe SHA256 Hash Verified</li>
-                <li class="search-item">ShimCache Hit - external_aimbot_compiled.exe Execution Flagged</li>
-            </ul>
-            <button class="download-btn" onclick="startDownload('DeepTraceAuditor.exe')">Download Deep Trace Auditor</button>
+            <h3>USB & Registry Persistence Blaster</h3>
+            <p>Specialized forensic tools to surface standalone persistence artifact cached entries, registry history, backdoor keys & registry hijacking mechanisms.</p>
+            <div class="file-path">Target: USBSTOR\Disk&Ven_SanDisk&Prod_Cruzer_Glide</div>
+            <button class="download-btn" onclick="startDownload('USBBlaster.zip')">Download USB Blaster</button>
         </section>
 
-        <!-- Free Tool 6: NTFS Journal Explorer -->
+        <!-- Tool 6: Browser History & Session Examiner -->
         <section class="card-section">
-            <h3>🕸️ NTFS Journal Explorer</h3>
-            <p class="tool-desc">Forensic parsing utility featuring USN Journal bypass detection and deep bypassed folder/file logging.</p>
-            <p><strong>How it works:</strong> Parses the NTFS USN ChangeJournal to extract low-level file deletion logs.</p>
-            <p class="file-path">📁 Target: <code>$UsnJrnl:$J</code></p>
-            <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter NTFS journal..." onkeyup="filterToolData(this, 'ntfsResults')">
-            </div>
-            <ul id="ntfsResults" class="search-item-list">
-                <li class="search-item">File Delete - C:\Cheats\ghost_inject.exe - USN Record Reason: 0x00000200</li>
-            </ul>
-            <button class="download-btn" onclick="startDownload('NTFSJournalExplorer.exe')">Download NTFS Explorer</button>
+            <h3>Browser History & Session Examiner</h3>
+            <p>Scans browser caches, cookies, and local storage remnants for cached exploit links or bypassed authentication tokens.</p>
+            <div class="file-path">Target: AppData\Local\Google\Chrome\User Data\Default\Network</div>
+            <button class="download-btn" onclick="startDownload('BrowserExaminer.zip')">Download Browser Examiner</button>
         </section>
 
-        <!-- Free Tool 7: ShellBags & Timeline Analyzer -->
+        <!-- Tool 7: Startup & Task Scheduler Auditor -->
         <section class="card-section">
-            <h3>🦇 ShellBags & Timeline Analyzer</h3>
-            <p class="tool-desc">Examines Windows Registry ShellBags artifacts to track historical folder access and explorer paths.</p>
-            <p><strong>How it works:</strong> Parses BagMRU Registry Keys, UserAssist, MuiCache, DriveAccess, History_Path_Log.</p>
-            <p class="file-path">📁 Target: <code>NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU</code></p>
-            <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter ShellBags..." onkeyup="filterToolData(this, 'shellbagResults')">
-            </div>
-            <ul id="shellbagResults" class="search-item-list">
-                <li class="search-item">ShellBag Access - Folder Opened: C:\Users\Admin\Downloads\CheatsFolder</li>
-            </ul>
-            <button class="download-btn" onclick="startDownload('ShellBagsAnalyzer.exe')">Download ShellBags Analyzer</button>
+            <h3>Startup & Task Scheduler Auditor</h3>
+            <p>Analyzes hidden registry run keys, startup folder shortcuts, and scheduled tasks designed for automated persistence.</p>
+            <div class="file-path">Target: C:\Windows\System32\Tasks & Run/RunOnce Registry</div>
+            <button class="download-btn" onclick="startDownload('StartupAuditor.zip')">Download Startup Auditor</button>
         </section>
 
-        <!-- Free Tool 8: Prefetch & Timeline Forensics -->
+        <!-- Tool 8: Network Connection & DNS Leak Monitor -->
         <section class="card-section">
-            <h3>🎃 Prefetch & Timeline Forensics</h3>
-            <p class="tool-desc">Extracts and audits Windows Prefetch (.pf) files to reveal execution analytics and timestamps.</p>
-            <p><strong>How it works:</strong> Analyzes and parses .pf files in <code>C:\Windows\Prefetch</code>.</p>
-            <p class="file-path">📁 Target: <code>C:\Windows\Prefetch\Directory_Scan</code></p>
-            <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter Prefetch Forensics..." onkeyup="filterToolData(this, 'pfForensicResults')">
-            </div>
-            <ul id="pfForensicResults" class="search-item-list">
-                <li class="search-item">Prefetch Execution - aimbot_v1.exe - Run Count: 14</li>
-            </ul>
-            <button class="download-btn" onclick="startDownload('PrefetchForensics.exe')">Download Prefetch Forensics</button>
+            <h3>Network Connection & DNS Leak Monitor</h3>
+            <p>Inspects active socket connections, established remote sessions, and recent DNS cache queries for unauthorized proxy tunnels.</p>
+            <div class="file-path">Target: Active TCP/UDP Sockets & DNS Cache Table</div>
+            <button class="download-btn" onclick="startDownload('NetworkMonitor.zip')">Download Network Monitor</button>
         </section>
 
-        <!-- Free Tool 9: USB & Registry Persistence Blaster -->
-        <section class="card-section">
-            <h3>👻 USB & Registry Persistence Blaster</h3>
-            <p class="tool-desc">Specialized forensic module to track external USB device connection artifacts and detect hidden registry-based persistence keys.</p>
-            <p><strong>How it works:</strong> Scans Windows Registry Enumeration, Payload USB, Device_Serial_History, Startup_Entries, Secure_Hook.</p>
-            <p class="file-path">📁 Target: <code>USBSTOR\Disk&Ven_SanDisk&Prod_Cruzer_Glide</code></p>
+        <!-- Tool 9: Detect Version 1 Tool - Haunted Edition (Bundle) -->
+        <section class="card-section bundle-card">
+            <h3>Detect Version 1 Tool - Haunted Edition</h3>
+            <p>Comprehensive all-in-one system auditing and optimization suite packaged. Optimized for system performance, deep inspection, and spooky aesthetics.</p>
+            
             <div class="card-search-container">
-                <input type="text" class="card-search-input" placeholder="Filter USB persistence..." onkeyup="filterToolData(this, 'usbResults')">
+                <input type="text" class="card-search-input" placeholder="Search files/scripts inside bundle..." onkeyup="filterToolData(this, 'bundleSearchList')">
             </div>
-            <ul id="usbResults" class="search-item-list">
-                <li class="search-item">USB Storage Connected - SanDisk Cruzer Glide SN&49201948</li>
-                <li class="search-item">Registry Persistence Key - HKCU\Software\Microsoft\Windows\CurrentVersion\Run</li>
+            <ul class="search-item-list" id="bundleSearchList">
+                <li class="search-item">cheat_hook_v1_client.dll</li>
+                <li class="search-item">spoofed_driver_x64.sys</li>
+                <li class="search-item">encrypted_payload_loader.exe</li>
+                <li class="search-item">stealth_injector_v4.exe</li>
             </ul>
-            <button class="download-btn" onclick="startDownload('USBPersistenceBlaster.exe')">Download USB Blaster</button>
+
+            <div class="file-path">C:\Detectv1\Bundles\Detectv1-HauntedEdition.zip</div>
+            <button class="download-btn premium-dl-btn" onclick="startDownload('Detectv1-HauntedEdition.zip')">Download All (.ZIP)</button>
         </section>
 
-        <!-- PREMIUM SECTION (Hidden until unlocked/purchased/boosted/trial claimed) -->
-        <section id="premiumToolsSection" class="card-section premium-section locked-premium">
-            <h2>🔒 Premium Tools Suite (Locked)</h2>
-            <p>Access requires Discord Server Boost (Server ID: <code>1555205477938368544</code>, Role ID: <code>1555984089432199329</code>), Owner Access, Active Subscription, or Claimed Free Trial.</p>
+        <!-- Locked Premium Tools Suite Section -->
+        <section class="card-section locked-premium" id="premiumToolsSection">
+            <h3>👑 Premium Tools Suite (Locked)</h3>
+            <p>Access exclusive LastActivityView advanced system artifact inspection and professional forensic auditor modules.</p>
             <button class="unlock-btn" onclick="openPremiumModal(event)">Open Premium Access Page</button>
         </section>
 
-        <!-- ACTUAL PREMIUM TOOLS (Displayed when unlocked) -->
+        <!-- Unlocked Premium Content (LastActivityView GUI - Appears only after unlock/download) -->
         <div id="unlockedPremiumContent" style="display: none;">
-            
-            <!-- Premium Tool #1: USB Cheat Scanner -->
-            <section class="card-section premium-tool-card">
-                <h3>⚡ [PREMIUM TOOL #1] Advanced USB Cheat & Trace Scanner</h3>
-                <p class="tool-desc">Directly scans mounted USB storage drives, external volumes, and hidden sectors for residual cheat files, loaders, and encrypted injectors.</p>
-                <p class="file-path">📁 Target: <code>Removable Volumes (USB Storage Inspection)</code></p>
-                <div class="card-search-container">
-                    <input type="text" class="card-search-input" placeholder="Filter USB cheat items..." onkeyup="filterToolData(this, 'usbScanResults')">
-                </div>
-                <ul id="usbScanResults" class="search-item-list">
-                    <li class="search-item">USB Drive Detected - E:\ [SanDisk Cruzer - 32GB]</li>
-                    <li class="search-item">Cheat File Found on USB - E:\Cheats\ghost_loader_v4.exe</li>
-                    <li class="search-item">Encrypted DLL Found - E:\Dlls\aim_assist_x64.dll</li>
-                </ul>
-                <button class="download-btn premium-dl-btn" onclick="startDownload('USB_Advanced_Cheat_Scanner.exe')">Download USB Cheat Scanner</button>
-            </section>
-
-            <!-- Premium Tool #2: LastActivityView Style Forensic Auditor -->
-            <section class="card-section premium-tool-card lastactivity-wrapper">
-                <div class="lav-header-bar">
-                    <span><strong>LastActivityView - Forensic System Auditor</strong></span>
-                    <span>File Edit View Options Help</span>
-                </div>
-                <p class="tool-desc">Advanced system activity tracking module mirroring NirSoft LastActivityView GUI, mapping all executed .exe files, opened folders, and cheat traces with realistic timestamps.</p>
+            <section class="card-section bundle-card">
+                <h3>LastActivityView - Forensic System Auditor</h3>
+                <p>Advanced system activity tracking module mirroring NirSoft LastActivityView GUI, mapping all executed .exe files, opened folders, and cheat traces with realistic timestamps.</p>
                 
-                <div class="lav-table-container">
-                    <table class="lav-table">
-                        <thead>
-                            <tr>
-                                <th>Action Time</th>
-                                <th>Description</th>
-                                <th>Filename</th>
-                                <th>Full Path</th>
-                            </tr>
-                        </thead>
-                        <tbody id="lavTableBody">
-                            <!-- Populated dynamically via JS with real timestamps close to current system date -->
-                        </tbody>
-                    </table>
+                <div class="lastactivity-wrapper">
+                    <div class="lav-header-bar">
+                        <span>LastActivityView – Forensic System Auditor</span>
+                        <span>File Edit View Options Help</span>
+                    </div>
+                    <div class="lav-table-container">
+                        <table class="lav-table">
+                            <thead>
+                                <tr>
+                                    <th>Action Time</th>
+                                    <th>Description</th>
+                                    <th>Filename</th>
+                                    <th>Full Path</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lavTableBody">
+                                <!-- Populated dynamically by script.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="lav-footer-status" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                        <span id="lavItemCount">7 item(s), 1 Selected</span>
+                        <span style="font-size: 11px; color: var(--text-muted);">Premium Tools - Advanced Auditor</span>
+                    </div>
                 </div>
-                <div class="lav-footer-status">
-                    <span id="lavItemCount">0 item(s), 1 Selected</span>
-                    <span>Premium Tools - Advanced Auditor</span>
-                </div>
-                <button class="download-btn premium-dl-btn" style="margin-top: 15px;" onclick="startDownload('LastActivityView_Forensic_Auditor.exe')">Download Forensic Auditor Utility</button>
+                <button class="download-btn premium-dl-btn" style="margin-top: 15px;" onclick="startDownload('LastActivityView_Auditor.zip')">Download Forensic Auditor Utility</button>
             </section>
-
         </div>
 
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Detect Version 1 Tool. Designed & Developed by Lowrenz Dev</p>
+        <p>&copy; 2026 DetectVersion 1 - Designed & Developed by LowrenzDev</p>
         <div class="footer-links">
-            <a href="#" onclick="openFooterModal('freeTools')">Free Tools Policy</a>
+            <a href="#" onclick="openFooterModal('freeTools')">Free Tools</a>
             <a href="#" onclick="openFooterModal('changelogs')">Changelogs</a>
             <a href="#" onclick="openFooterModal('privacy')">Privacy Policy</a>
             <a href="#" onclick="openFooterModal('tos')">TOS</a>
         </div>
     </footer>
 
-    <!-- Auth Modal -->
-    <div id="authModal" class="modal-overlay" style="display: none;">
+    <!-- Auth Modal (Login / Register) -->
+    <div class="modal-overlay" id="authModal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeAuthModal()">&times;</span>
+            
             <div id="loginFormContainer">
-                <h2>Coven Login</h2>
+                <h2>Checker Login</h2>
+                <p>Access your portal with your credentials.</p>
                 <form onsubmit="handleLogin(event)">
                     <div class="form-group">
                         <label>Email or Username</label>
-                        <input type="text" required placeholder="Enter username...">
+                        <input type="text" required placeholder="Enter username or email">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
                         <div class="password-wrapper">
-                            <input type="password" id="loginPassword" required placeholder="Enter password...">
-                            <button type="button" class="eye-btn" onclick="togglePassword('loginPassword', this)">👁</button>
+                            <input type="password" id="loginPass" required placeholder="Enter password">
+                            <button type="button" class="eye-btn" onclick="togglePassword('loginPass', this)">👁</button>
                         </div>
                     </div>
                     <button type="submit" class="submit-auth-btn">Sign In</button>
                 </form>
+                <div class="social-login">
+                    <p>Or continue with</p>
+                    <button class="social-btn" onclick="socialAuth('Google')">Google</button>
+                    <button class="social-btn" onclick="socialAuth('Discord')">Discord</button>
+                </div>
             </div>
+
             <div id="registerFormContainer" style="display: none;">
-                <h2>Join the Coven</h2>
+                <h2>Register Checker Account</h2>
+                <p>Create a new account for advanced tools.</p>
                 <form onsubmit="handleRegister(event)">
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" required placeholder="Choose username...">
+                        <input type="text" required placeholder="Choose a username">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" required placeholder="Enter email...">
+                        <input type="email" required placeholder="Enter your email">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
                         <div class="password-wrapper">
-                            <input type="password" id="regPassword" required placeholder="Create password...">
-                            <button type="button" class="eye-btn" onclick="togglePassword('regPassword', this)">👁</button>
+                            <input type="password" id="regPass" required placeholder="Create password">
+                            <button type="button" class="eye-btn" onclick="togglePassword('regPass', this)">👁</button>
                         </div>
                     </div>
-                    <button type="submit" class="submit-auth-btn">Register Account</button>
+                    <button type="submit" class="submit-auth-btn">Create Account</button>
                 </form>
             </div>
-            <div class="social-login">
-                <p>Or authenticate securely via:</p>
-                <button class="social-btn google-btn" onclick="socialAuth('Google')">Sign in with Google</button>
-                <button class="social-btn github-btn" onclick="socialAuth('GitHub')">Sign in with GitHub</button>
-            </div>
         </div>
     </div>
 
-    <!-- Footer Modal -->
-    <div id="footerModal" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeFooterModal()">&times;</span>
-            <h2 id="footerModalTitle">Policy Title</h2>
-            <p id="footerModalBody">Policy body text goes here...</p>
-        </div>
-    </div>
-
-    <!-- Premium & Subscription Modal -->
-    <div id="premiumModal" class="modal-overlay" style="display: none;">
+    <!-- Premium Modal Plans (Contains Free Trial & Subscription Options) -->
+    <div class="modal-overlay" id="premiumModal">
         <div class="modal-content premium-modal-box">
             <span class="close-modal" onclick="closePremiumModal()">&times;</span>
-            <h2>⚡ Detect v1.0 Premium Access</h2>
-            <p>Choose your access plan or claim your free trial:</p>
+            <h2>Unlock Detect Premium Suite</h2>
+            <p>Choose your subscription plan or claim your free evaluation access.</p>
             
             <div class="premium-plans-grid">
                 <div class="plan-card">
-                    <h3>Monthly Plan</h3>
-                    <p class="price">₱50 <span>/ month</span></p>
-                    <p>Full access to USB Scanner, Forensic Auditor, and all future updates.</p>
-                    <button class="buy-btn" onclick="simulatePurchase('Monthly Plan - ₱50')">Subscribe Now</button>
+                    <h3>Monthly Pass</h3>
+                    <div class="price">₱50 <span>/ month</span></div>
+                    <p>Full access to advanced forensic log scanners and LastActivityView tools.</p>
+                    <button class="buy-btn" onclick="simulatePurchase('Monthly Plan (₱50)')">Subscribe Now</button>
                 </div>
                 <div class="plan-card featured-plan">
-                    <h3>Yearly Plan</h3>
-                    <p class="price">₱100 <span>/ year</span></p>
-                    <p>Best value! Save big with full yearly premium access.</p>
-                    <button class="buy-btn" onclick="simulatePurchase('Yearly Plan - ₱100')">Subscribe Now</button>
+                    <h3>Yearly Pass</h3>
+                    <div class="price">₱100 <span>/ year</span></div>
+                    <p>Best value for long-term server administration and full system checks.</p>
+                    <button class="buy-btn" onclick="simulatePurchase('Yearly Plan (₱100)')">Subscribe Now</button>
                 </div>
             </div>
 
-            <div class="free-trial-sidebar-area">
-                <h3>🎁 Free Trial Status</h3>
-                <p id="modalTrialStatusDesc">Free trial is ready to claim if within the 5-day window after the 10-day countdown!</p>
-                <button id="modalClaimBtn" class="claim-btn-disabled" disabled onclick="claimFreeTrial()">Claim Free Trial (10 Days)</button>
+            <div class="free-trial-sidebar-area" style="margin-top: 20px; padding: 15px; background: rgba(20, 10, 40, 0.6); border-radius: 8px; border: 1px solid rgba(255, 70, 70, 0.3);">
+                <h3>Free Trial Evaluation</h3>
+                <p id="modalClaimStatus">Free trial is active and available to claim within 5 days! (00d 05h 23m remaining)</p>
+                <button class="claim-btn-active" id="modalClaimBtn" onclick="claimFreeTrial()">Claim Free Trial Now</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Footer Info Modal -->
+    <div class="modal-overlay" id="footerModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeFooterModal()">&times;</span>
+            <h2 id="footerModalTitle">Information</h2>
+            <p id="footerModalBody" style="white-space: pre-line; margin-top: 15px; color: var(--text-muted); font-size: 13px;"></p>
         </div>
     </div>
 
